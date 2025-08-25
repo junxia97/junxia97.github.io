@@ -1,1077 +1,343 @@
-<!-- !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> -->
-<HTML xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
-<HEAD>
-<META 
-content="IE=7.0000" http-equiv="X-UA-Compatible">
-<TITLE>Jun Xia, HKUST(GZ) | HKUST</TITLE>
-<META name=keywords 
-content="Jun Xia, HKUST(GZ) | HKUST">
-<META content=text/html;charset=utf-8 http-equiv=Content-Type>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="bootstrap.min.css" rel="stylesheet" media="screen" />
-<link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-<LINK rel=stylesheet type=text/css  href="./jemdoc.css"><LINK rel="shortcut icon" href="rui.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
-<META name=GENERATOR content="MSHTML 11.00.9600.17280"></HEAD>
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
-          <div class="navbar-header my-nav">
-            <a class="navbar-brand" style="margin-left: 10px" href="">Jun Xia @ HKUST(GZ) | HKUST </a>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun Xia, HKUST(GZ) | HKUST</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
+    <style>
+        :root {
+            --primary-color: #224b8d;
+            --secondary-color: #DA1212;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding-top: 80px;
+            color: #333;
+        }
+        
+        .navbar-custom {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-custom .navbar-nav .nav-link {
+            color: #555;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+        
+        .navbar-custom .navbar-nav .nav-link:hover,
+        .navbar-custom .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .profile-img {
+            max-height: 260px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .section-title {
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 0.3em;
+            margin-bottom: 1.5em;
+        }
+        
+        .news-item {
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        
+        .social-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--secondary-color);
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .publication-item {
+            margin-bottom: 1.5em;
+        }
+        
+        .pub-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.3em;
+        }
+        
+        .author-list {
+            margin-bottom: 0.3em;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #1a3a6b;
+            border-color: #1a3a6b;
+        }
+        
+        .page-section {
+            display: none;
+            padding: 20px 0;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        .news-container {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        /* Custom scrollbar for news */
+        .news-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .news-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .news-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        
+        .news-container::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Jun Xia @ HKUST(GZ) | HKUST</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-page="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="aims-lab">AIMS Lab</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="photos">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="openings">Openings</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse" style="max-height: 435px; transition: max-height 0.15s ease-out;">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#Invited Talks">Invited Talks</a></li>
-            <li><a href="#Publications">Publications</a></li>
-            <li><a href="#Service">Service</a></li>
-            <li><a href="#Honors">Honors</a></li>
-            <li><a href="#Co-working">Co-working Students</a></li>
-
-          </ul>
-        </div>
-      </div>
     </nav>
 
-<BODY style="font-family:Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;font-size:16px; padding-top: 80px">
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="page-section active">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <img src="jun_profile.jpg" class="img-fluid profile-img" alt="Jun Xia">
+                </div>
+                <div class="col-md-8">
+                    <h1>Jun Xia <img src="imgs/sign.jpg" style="max-height:80px;" alt="Signature"/></h1>
+                    <p class="lead">Assistant Professor<br>
+                    Information Hub<br>
+                    <a href="https://www.hkust-gz.edu.cn/">HKUST(GZ)</a> | <a href="https://hkust.edu.hk/">HKUST</a></p>
+                    <p>
+                        Email: <a href="mailto:junxia@hkust-gz.edu.cn">junxia@hkust-gz.edu.cn</a><br>
+                    </p>
+                    <div class="mt-3">
+                        <a href="https://twitter.com/jun_westlake" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ" class="social-icon"><i class="ai ai-google-scholar"></i></a>
+                        <a href="https://github.com/junxia97" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.zhihu.com/people/xia-jun-70-77" class="social-icon"><i class="fab fa-zhihu"></i></a>
+                    </div>
+                </div>
+            </div>
 
-<DIV class="container body-content">
-<div class="col-6">
-<P>
-<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-<!-- Place this tag in your head or just before your close body tag. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script async defer src="buttons.js"></script>
-<script src="jquery.scrollUp.js"></script>
+            <h2 class="section-title">Profile</h2>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                Jun Xia is a Tenure-Track Assistant Professor at the Hong Kong University of Science and Technology (Guangzhou), leading the AI for Multimodality and Science (AIMS) Lab with research focused on multimodal large models and AI for life sciences. 
+                He also holds an affiliated appointment at The Hong Kong University of Science and Technology (Clear Water Bay, Hong Kong). He received his Ph.D. from a joint program between Westlake University and Zhejiang University.
+            </p>
+            
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                <span class="highlight">🌟 Hiring</span>: We are actively seeking funded visiting students, research assistant and self-motivated Ph.D. students. Since July 2022, almost every visiting student who worked with me has published papers at top conferences such as ICML, NeurIPS, and ICLR during their visit.
+                If you are interested, please don't hesitate to contact me via <a href="mailto:junxia@hkust-gz.edu.cn">Email</a>.
+            </p>
 
-<SCRIPT type=text/javascript>
-  
-var a = document.querySelector(".navbar-toggle");
-    $(".navbar-nav li a").on("click",function () {
-        a.click();
-    });
+            <h2 class="section-title">News <img src="new_gif_1.gif" height="25" alt="New"></h2>
+            <div class="news-container">
+                <ul class="list-unstyled">
+                    <li class="news-item"><strong>(2025.04)</strong> Invited to serve as an <strong>Area Chair for NeurIPS 2025</strong>.</li>
+                    <li class="news-item"><strong>(2025.01)</strong> Four papers on AI for Life Science are accepted in <strong>ICLR 2025</strong>.</li>
+                    <li class="news-item"><strong>(2024.12)</strong> A paper on AIDD is accepted in <strong>Bioinformatics</strong>.</li>
+                    <li class="news-item"><strong>(2024.10)</strong> A paper on computational proteomics is accepted in <strong>AIDrugX@NeurIPS 2024</strong> as Spotlight.</li>
+                    <li class="news-item"><strong>(2024.10)</strong> Seven papers on computational biology and GNNs are accepted in <strong>NeurIPS 2024</strong>.</li>
+                </ul>
+            </div>
+            <p class="mt-2"><a href="#" data-page="news-archive">View all news →</a></p>
 
-// Toggle Display of BibTeX
-function toggleBibtex(articleid) {
-  var bib = document.getElementById(articleid);
-  // Toggle 
-    if(bib.style.display == "none") {
-      var x = document.getElementsByClassName("blockcontent");
-      var i;
-      for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-      }
-      bib.style.display = "";
-    }
-    else {
-      bib.style.display = "none";
-    }
+            <h2 class="section-title">Selected Publications</h2>
+            <p>
+                Discover the <a href="pub.html"><strong>full list</strong></a> | 
+                <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ&hl=en" target="_blank"><img src="./logos/google_scholar.jpg" height="20" alt="google scholar"></a> | 
+                <a href="https://www.semanticscholar.org/author/Jun-Xia/2069551655" target="_blank"><img src="./logos/semantic_scholar_logo.png" height="20" alt="semantic scholar"></a> | 
+                <a href="https://dblp.org/pid/22/3650.html" target="_blank"> <img src="./logos/dblp_logo.png" height="22" alt="dblp"></a>
+            </p>
 
-}
+            <div class="publication-item">
+                <div class="pub-title">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</div>
+                <div class="author-list"><strong>Jun Xia</strong>, Sizhe Liu, Jingbo Zhou, Shaorong Chen, Stan Z.Li</div>
+                <div><strong>ICLR 2025; AIDrugX@NeurIPS 2024 (Spotlight)</strong></div>
+                <div class="mt-1">
+                    [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
+                    [<a href="#">Bib</a>]
+                    [<a href="https://junxia97.github.io/">Code</a>]
+                </div>
+            </div>
 
-function showall(){  
-    var items = document.getElementsByClassName('coauthor');
-    if(document.getElementById("list_type").text == "Full list"){
-        document.getElementById("list_type").text = "Selected";
-        for (i = 0; i < items.length; ++i)
-            {
-                items[i].style.display = 'block';
-            }
-    }else{
-        document.getElementById("list_type").text = "Full list";
-        for (i = 0; i < items.length; ++i)
-            {
-                items[i].style.display = 'none';
-            }
-    }
-    
-}
-</SCRIPT>
+            <div class="publication-item">
+                <div class="pub-title">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</div>
+                <div class="author-list"><strong>Jun Xia</strong>, Shaorong Chen, Jingbo Zhou, Tianze Ling, Stan Z.Li</div>
+                <div><strong>NeurIPS 2024</strong></div>
+                <div class="mt-1">
+                    [<a href="https://junxia97.github.io/">PDF</a>]
+                    [<a href="#">Bib</a>]
+                    [<a href="https://junxia97.github.io/">Code</a>]
+                </div>
+            </div>
 
-<script>
-$(function () {
-    $.scrollUp({
-        animation: 'fade',
-        scrollImg: {
-            active: true,
-            type: 'background',
-            src: 'imgs/top.png'
-        }
-    });
-});
-$('#scrollUpTheme').attr('href', 'image.css?1.1');
-$('.image-switch').addClass('active');
+            <div class="text-center mt-4">
+                <a href="#" data-page="publications" class="btn btn-primary btn-primary-custom">View All Publications</a>
+            </div>
+        </section>
 
-</script>
+        <!-- AIMS Lab Section (Placeholder) -->
+        <section id="aims-lab" class="page-section">
+            <h2 class="section-title">AIMS Lab</h2>
+            <div class="alert alert-info">
+                This section is under construction. Content will be added soon.
+            </div>
+            <p>The AI for Multimodality and Science (AIMS) Lab focuses on cutting-edge research in multimodal AI and its applications in scientific discovery.</p>
+        </section>
 
-<style type="text/css">
-a {
-	TEXT-DECORATION: none; COLOR: #224b8d
-}
-H2 {
-	MARGIN-BOTTOM: 0.3em;
-	BORDER-BOTTOM: #aaaaaa 1px solid;
-	PADDING-BOTTOM: 0.2em;
-	PADDING-TOP: 0.5em;
-	MARGIN-TOP: 0.7em;
-	LINE-HEIGHT: 1;
-}
-#scrollUp {
-    background-image: url("imgs/top.png");
-    bottom: 20px;
-    right: 20px;
-    width: 38px;    /* Width of image */
-    height: 38px;   /* Height of image */
-}
-DIV.blockcontent {
-	BORDER-TOP: silver 1px solid; BORDER-RIGHT: silver 1px solid; BORDER-BOTTOM: silver 1px solid; PADDING-BOTTOM: 0.3em; PADDING-TOP: 0.3em; PADDING-LEFT: 0.5em; BORDER-LEFT: silver 1px solid; PADDING-RIGHT: 0.5em
-}
-pre{
-border:0px;
-background-color: #fff
-}
-@media (min-width: 1200px) {
-    .container{
-        width: 1000px;
-    }
-}
+        <!-- Research Section (Placeholder) -->
+        <section id="research" class="page-section">
+            <h2 class="section-title">Research</h2>
+            <div class="alert alert-info">
+                This section is under construction. Content will be added soon.
+            </div>
+            <p>Our research spans multiple areas including AI for biochemistry, graph machine learning, and multimodal learning.</p>
+        </section>
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: inherit;
-    font-weight: 360;
-    line-height: 1.1;
-    color: inherit;
-}
+        <!-- Publications Section (Placeholder) -->
+        <section id="publications" class="page-section">
+            <h2 class="section-title">Publications</h2>
+            <div class="alert alert-info">
+                This section is under construction. Full publications list will be added soon.
+            </div>
+            <p>Explore my complete publication record across various conferences and journals.</p>
+        </section>
 
-</style>
+        <!-- Photos Section (Placeholder) -->
+        <section id="photos" class="page-section">
+            <h2 class="section-title">Photos</h2>
+            <div class="alert alert-info">
+                This section is under construction. Photos will be added soon.
+            </div>
+            <p>A collection of photos from conferences, lab events, and academic activities.</p>
+        </section>
 
-</P>
-<P></P>
+        <!-- Openings Section (Placeholder) -->
+        <section id="openings" class="page-section">
+            <h2 class="section-title">Openings</h2>
+            <div class="alert alert-info">
+                This section is under construction. Detailed information will be added soon.
+            </div>
+            <p>We are always looking for motivated students and researchers to join our team. Multiple positions are available.</p>
+        </section>
 
-<div class="row">
-<div class="col-sm-4">
-<img class="img-responsive" style="max-height:260px;display: block; margin-top: 50px;" src="jun_profile.jpg"/>
-</div>
-
-<div class="col-sm-8">
-<div class="clearfix visible-xs-block"></div>
-<h1>Jun Xia <img style="max-height:80px;" src="imgs/sign.jpg"/></h1>
-
-<p style="font-size: 18px">Assistant Professor<br>
-Information Hub<br>
-<a href="https://www.hkust-gz.edu.cn/">HKUST(GZ)<a> | <a href="https://hkust.edu.hk/">HKUST</a> <br>
-<!-- <b>Email</b>: <tt>&#120;&#105;&#97;&#106;&#117;&#110;&#64;&#119;&#101;&#115;&#116;&#108;&#97;&#107;&#101;&#46;&#101;&#100;&#117;&#46;&#99;&#110;</tt> <br> -->
-Email: <a href="mailto:xiajun@westlake.edu.cn">junxia@hkust-gz.edu.cn</a><br>
-<!-- Advisor: <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ">Stan Z. Li (IEEE Fellow)</a>    <br> -->
-
-<div class="col-sm-10" style="padding-left:0px">
-<div class="col-xs-2" style="padding-left:0px">
-    <a href="https://twitter.com/jun_westlake" target="_blank" rel="noopener"><i class="fab fa-twitter big-icon" style=" font-size:30px;"></i></a>
+        <!-- News Archive Section (Placeholder) -->
+        <section id="news-archive" class="page-section">
+            <h2 class="section-title">News Archive</h2>
+            <div class="alert alert-info">
+                This section is under construction. Full news archive will be added soon.
+            </div>
+            <p>Complete history of news and announcements.</p>
+        </section>
     </div>
-    <div class="col-xs-2" style="padding-left:0px">
-    <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ" target="_blank" rel="noopener"><i class="ai ai-google-scholar big-icon" style=" font-size:30px;"></i></a>
-    </div>
-<!-- <div class="col-xs-2" style="padding-left:0px">
-    <a href="imgs/wechat.jpg" target="_blank" rel="noopener"><i class="fab fa-wechat big-icon" style=" font-size:30px;"></i></a>
-    </div> -->
-<div class="col-xs-2" style="padding-left:0px">
-<a href="https://github.com/junxia97" target="_blank" rel="noopener"><i class="fab fa-github big-icon" style=" font-size:30px;"></i></a>
-</div>
-<div class="col-xs-2" style="padding-left:0px">
-    <a href="https://www.zhihu.com/people/xia-jun-70-77" target="_blank" rel="noopener"><i class="fab fa-zhihu big-icon" style=" font-size:30px;"></i></a>
-<!--<a href="cv_zzs.pdf" target="_blank" rel="noopener"><i class="ai ai-cv big-icon big-icon" style=" font-size:30px;"></i></a>-->
-</div>
-</div>
-</p>
-</div>
-</div>
 
-<h2>Profile 
-<!-- <a href="cv_zhangzhuosheng.pdf">[Curriculum Vitae]</a> -->
-</h2>
-<p style="text-align:justify; text-justify:inter-ideograph;">
-Jun Xia is a Tenure-Track Assistant Professor at the Hong Kong University of Science and Technology (Guangzhou), leading the AI for Multimodality and Science (AIMS) Lab with research focused on multimodal large models and AI for life sciences. 
-He also holds an affiliated appointment at The Hong Kong University of Science and Technology (Clear Water Bay, Hong Kong). He received his Ph.D. from a joint program between Westlake University and Zhejiang University.
-<!-- Hi there! I am Jun Xia, a Ph.D. student at Westlake University and Zhejiang University, advised by Chair Prof. <a style="color:#005580" href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ" target="_blank" rel="noopener">Stan Z. Li</a>.
-Before Joining Westlake, I received my B.E. degree with honors from Central South University. 
-My primary research interests lie in the intersection of Machine Learning and Computational Biochemistry, supported by the Fundamental Research Project for Young Ph.D. students from NSFC (首批国家自然科学基金青年学生基础研究项目(博士生)) and CIE-Tencent Doctoral Research Incentive Project (首届中国电子学会—腾讯博士生科研激励计划(混元大模型专项)).  -->
-<!-- Currently, my main research focus lies in the following aspects:
-<UL>
-    <li> <p> Biological Omics Data Analysis; </P>
-    <li> <p> Graph Machine Learning: Large Graph Models, Pre-training Strategies, etc.</P>
-</UL> -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>© 2023 Jun Xia. All rights reserved.</p>
+        </div>
+    </footer>
 
-                  
-</p>
-<p style="text-align:justify; text-justify:inter-ideograph;">
-🌟 <strong><font color="#DA1212">Hiring</font></strong>: We are actively seeking funded visiting students, research assistant and self-motivated Ph.D. students. Since July 2022, almost every visiting student who worked with me has published papers at top conferences such as ICML, NeurIPS, and ICLR during their visit.
-If you are interested, please don't hesitate to contact me via <a href="mailto:junxia@hkust-gz.edu.cn">Email</a>.
-</p>
- <!--
-<h2>RESEARCH INTEREST</h2>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Natural Language Understanding, Question Answering and Machine Reading Comprehension
--->
-<H2>News <img src="new_gif_1.gif"></H2>
- <!--<div style="overflow-y: scroll; height:280px;">-->
- <div>
-<UL>   
-
-<li>
-       (2025.04) Invited to serve as an <strong>Area Chair for NeurIPS 2025</strong>.
-<li>
-       (2025.01) Four papers on AI for Life Science are accepted in <strong>ICLR 2025</strong>. 
-<li>
-       (2024.12) A paper on AIDD is accepted in <strong>Bioinformatics</strong>. 
-<li>
-       (2024.10) A paper on computational proteomics is accepted in <strong>AIDrugX@NeurIPS 2024</strong> as Spotlight. 
-<li>
-	(2024.10) Seven papers on computational biology and GNNs are accepted in <strong>NeurIPS 2024</strong>.
-<li>
-	(2024.07) Invited to visit <a href="https://scholar.google.com/citations?user=sqWpn2AAAAAJ&hl=en">Prof. Fabian Theis</a>'s group at TUM & Helmholtz and 	
-	<a href="https://scholar.google.de/citations?user=NjzvH3kAAAAJ&hl=en">Prof. Matthias Mann</a>'s group at Max Planck Institute of Biochemistry, Germany.
-<li>
-	(2024.06) Invited review for <strong>Nature Communications</strong>.
-<li>
-	(2024.05) Invited to deliver a talk on "Foundation Models for Biochemistry" at VALSE student seminar. 
-<li>
-	(2024.05) Two papers on drug discovery are accepted in <strong>ICML 2024</strong>.
-<li>
- 	(2024.04) Two papers on drug discovery are accepted in <strong>IJCAI 2024</strong>. 
-<li>
-	(2024.01) One paper on protein design is accepted in <strong>ICLR 2024</strong>.
-    <li>
-	(2023.12) Selected as the Rising Stars in AI 2024 organized by KAUST AI Initiative.
-    <li>
-	(2023.12) One paper on antibody design is accepted in <strong>AAAI 2024</strong>
-    <li>
-	(2023.12) One paper on graph pre-training is accepted in <strong>ICDE 2024</strong>
-    <li>
-        (2023.10) Invited to diliver a talk on AIDD @ <strong>Fudan University</strong>.   
-    <li>
-	(2023.10) I am awarded <strong>NeurIPS Scholar Award</strong> & <strong>Suwu Scholarship</strong>.
-    <li>
-        (2023.09) One paper on molecular property prediction is accepted in <strong>NeurIPS 2023</strong>.
-      <li>
-        (2023.09) Invited to review for ICLR 2024, ACM TKDD, SDM 2024 and IEEE TIP.
-      <li>
-        (2023.08) Two papers on graph clustering are accepted at <strong>ACM MM 2023</strong>.
-      <li>
-        <!-- (2023.06) One paper on molecular property prediction is accepted as a <strong>Spotlight Talk</strong> at ICML 2023 Computational Biology Workshop.
-      <li> -->
-        (2023.06) One paper on label-noise learning on graph data is accepted in <strong>TKDE 2023</strong>.
-      <li>
-        (2023.06) One paper on Chemical Pre-trained Models is accepted in <strong>ECML 2023</strong>.
-	<li>
-	(2023.04) Invited to diliver a talk @ <strong>Canada MILA Lab</strong> (Led by Turing Awardee Yoshua Bengio).
-      <li>
-        (2023.04) One paper on graph clustering is accepted in <strong>ICML 2023</strong>.
-      <li>
-        (2023.04) Our survey on Chemical Language Models has been accepted in <strong>IJCAI 2023 survey track</strong>.
-     <li>
-        (2023.02) Our SimGRACE (WWW 2022) paper is featured as <strong>Most Influential WWW Papers</strong> by <a href="https://www.paperdigest.org/2023/01/most-influential-www-papers-2023-01/">Paper Digest</a>. 
-     <li>
-        (2023.02) Two papers (One oral presentation) are accepted in <strong>CVPR 2023</strong>. 
-     <!-- <li>
-        (2023.02) Three papers are accepted in <strong>ICASSP 2023</strong>.  -->
-      <li>
-        (2023.01) I am a winner of <strong>Westlake Presidential Awards</strong>, the highest honor for Westlake students.
-      <li>
-        (2023.01) One paper on  molecular pre-trained models is accepted in <strong>ICLR 2023</strong>. 
-      <!-- <li>
-        (2023.01) I am invited to serve as a program committee member of ICML 2023, KDD 2023, NeurIPS 2023.  -->
-      <li>
-        (2022.10) I am awarded <strong>National Scholarship</strong>. 
-      <!-- <li>
-        (2022.10) One paper is accepted in <strong>Communication Biology</strong>.  -->
-      <!-- <li>
-        (2022.06) Our survey on  pre-trained molecular graph models is accepted in <strong>Ai4Science@ICML 2022</strong>.  -->
-      <!-- <li>
-        (2022.06) One paper on  graph imbalanced learning is accepted in <strong>ECML 2022</strong>.  -->
-      <!-- <li>
-        (2022.06) I am awarded ICML 2022 participation grant.  -->
-      <li>
-        (2022.05) One paper on  graph contrastive learning is accepted in <strong>ICML 2022</strong>. 
-      <li>
-        (2022.01) One paper on  word embeddings  is accepted in <strong>ACL 2022</strong>. 
-      <!-- <li>
-        (2022.01) One paper on  label noise  is accepted in <strong>ICASSP 2022</strong>. -->
-      <li>
-        (2022.01) One paper on  graph pre-training  is accepted in <strong>WWW 2022</strong>. 
-    
-</UL>
-</div>
-
-<H2 id="Invited Talks">Invited Talks</H2>
-<div>
-<UL>     
-	<li>
-		2024/03: Talk on "Diciphering Proteomic Dark Matters Through SpectraAI" @ Princeton University, USA.
-	</li>
-	<li>
-		2024/07: Talk on "UltraProt: Diciphering Proteomic Mass Spectra by Scaling Transfer Learning to 137 Million Peptide Spectrum Matches" @ Max Planck Institute of Biochemistry, Germany.
-	</li>
-	<li>
-                2024/02: Talk on "Discipher Biochemical Codes with Pre-learned Potentials" @ KAUST AI Rising Stars Symposium, Saudi Arabia.
-        </li>   
-        <li>
-                2023/10: Talk on "Accelerating Drug Discovery with Pre-learned Potential" @ Fudan University. <a href="imgs/FudanTalk.pdf" target="_blank" rel="noopener">[slides]</a>
-         </li>     
-         <li>
-                2023/05: Talk on "Chemical Pre-trained Models: Retrospect & Prospect" @ Chinese Genomics Meet-up online <a href="https://www.youtube.com/live/0kjaJ8Nv-eU?feature=share">[Vedio]</a>.
-         </li>
-         <li>
-                2023/03: Talk on "Accelerating Drug Discovery with Pre-learned Potential" @ Alibaba Group.
-         </li>
-	<li>
-                2022/11: Talk on graph contrastive learning @ Aminer seminer (Online) <a href="https://www.bilibili.com/video/BV1ZT411c7Nb/?spm_id_from=333.337.search-card.all.click">[Vedio]</a>.
-         </li>
-         <li>
-                2022/03: Talk on hard negative mining in GCL @ LoGs seminer (Online)<a href="https://www.bilibili.com/video/BV1T84y1v7kj/?spm_id_from=333.337.search-card.all.click">[Vedio]</a>.
-         </li>
-         <li>
-                2022/08: Talk on pre-training GNNs @ Chungbuk National University, South Korea (Online)<a href="imgs/review_ICML2022w.pdf">[Slides (Stay tuned)]</a>.
-         </li>
-         <li>
-                2022/06: Talk on hard negative mining @ Prof. <a href="https://scholar.google.com/citations?user=6hA7WmUAAAAJ&hl=en">Yue Zhang</a>'s group in Westlake University<a href="imgs/ProGCL_ICML2022_final.pdf"></a>.
-         </li>
-      <li>
-	2022/05: Talk on graph contrastive learning @ Hangzhou Normal University (Online).
-      </li>
-              <!-- <li>
-                2021/11: Talk "Machine Reading Comprehension: The Paradigm of Pre-trained Models" at <a href="https://mp.weixin.qq.com/s/j9fSGI1dLy1GXY3GMPXrkg" target="_blank" rel="noopener">MLNLP 2021</a>.
-                <a href="https://bcmi.sjtu.edu.cn/~zhangzs/slides/MLNLP2021-MRC.pdf" target="_blank" rel="noopener">[slides]</a></li>
-              </li>
-        <li>
-                2021/08: Tutorial "Machine Reading Comprehension: The Role of Contextualized Language Models and Beyond" at IJCAI 2021, with Prof. <a style="color:#005580" href="http://bcmi.sjtu.edu.cn/~zhaohai/" target="_blank" rel="noopener">Hai Zhao</a>. <a href="http://bcmi.sjtu.edu.cn/~zhangzs/slides/IJCAI21_TT_MRC.pdf" target="_blank" rel="noopener">[slides]</a>
-              </li>
-        <li>
-                2021/07: Talk "Machine Reading Comprehension and Dialogue Systems" at Huawei Shanghai Institute. <a href="https://bcmi.sjtu.edu.cn/~zhangzs/slides/huawei-mrc.pdf" target="_blank" rel="noopener">[slides]</a>
-              </li>
-        <li>
-                2020/10: Talk "My Way to Reading Comprehension: Self-cognition and Persistence" at 
-                <a href="http://cips-cl.org/static/CCL2020/stu-discuss.html" target="_blank" rel="noopener">CCL 2020 Student Workshop</a>.
-               <a href="http://bcmi.sjtu.edu.cn/~zhangzs/slides/CCL2020_SW.pdf" target="_blank" rel="noopener">[slides]</a></li>
-              <li>
-                2020/05: Talk "Machine Reading Comprehension: The Role of Contextualized Language Models and Beyond" at UofA NLP seminar on MRC.
-                <a href="http://bcmi.sjtu.edu.cn/~zhangzs/slides/mrc_seminar.pdf" target="_blank" rel="noopener">[slides]</a></li>
-               <LI>
-               2017/10: Talk "Fine-grained Embedding for Reading Comprehension" at <a href="https://hfl-rc.github.io/cmrc2017/" target="_blank" rel="noopener">CMRC 2017 workshop in CCL 2017</a>.
-                <a href="http://bcmi.sjtu.edu.cn/~zhangzs/slides/CMRC2017_SJTU-BCMI.pdf" target="_blank" rel="noopener">[slides]</a></LI>        -->
-</UL>
-</div>
-
-
-<div id="Selected Publications" class="field" style="">
-<div class="blank"></div>
-<h2 id="Publications">Selected Publications</h2>
- Discover the <b><a href="pub.html" style="color:#005580">full list</a></b> | 
-<a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ&hl=en" target="_blank"><img src="./logos/google_scholar.jpg" height="20" alt="google scholar"></a> | 
-<a href="https://www.semanticscholar.org/author/Jun-Xia/2069551655" target="_blank"><img src="./logos/semantic_scholar_logo.png" height="20" alt="semantic scholar"></a> | 
-<a href="https://dblp.org/pid/22/3650.html" target="_blank"> <img src="./logos/dblp_logo.png" height="22" alt="dblp"></a>.<br> 
-
-<B>[AI for Biochemistry]</B>
-
-<!-- SearchNovo -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-	<a>Sizhe Liu</a>, 
-	<a>Jingbo Zhou</a>,
-        <a>Shaorong Chen</a>,   
-         <a>Stan Z.Li</a>.<BR>
-    <strong>ICLR 2025; AIDrugX@NeurIPS 2024 (<font color="#DA1212">Spotlight</font>)</strong><BR>
-      [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-anonymous2024towards,
-title={Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases},
-author={Anonymous},
-booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
-year={2024},
-url={https://openreview.net/forum?id=0zfUiSX5si}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-<!-- AdaNovo -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-        <a>Shaorong Chen</a>,
-        <a>Jingbo Zhou</a>,
-	<a>Tianze Ling</a>,    
-         <a>Stan Z.Li</a>.<BR>
-    <strong>NeurIPS 2024</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-anonymous2024towards,
-title={Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases},
-author={Anonymous},
-booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
-year={2024},
-url={https://openreview.net/forum?id=0zfUiSX5si}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-	
-<!-- Why -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">Understanding the Limitations of Deep Models for Molecular property prediction: Insights and Solutions</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-        <a>Lecheng Zhang</a>,
-        <a>Xiao Zhu</a>,
-         <a>Stan Z.Li</a>.<BR>
-    <strong>NeurIPS 2023; ICML 2023 Computational Biology Workshop (<font color="#DA1212">Spotlight Talk</font>)</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-xia2023understanding,
-title={Understanding the Limitations of Deep Models for Molecular property prediction: Insights and Solutions},
-author={Jun Xia and Lecheng Zhang and Xiao Zhu and Yue Liu and Zhangyang Gao and Bozhen Hu and Cheng Tan and Jiangbin Zheng and Siyuan Li and Stan Z. Li},
-booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
-year={2023}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- ICLR -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">Mole-BERT: Rethinking Pre-training Graph Neural Networks for Molecules</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-              <a>Chengshuai Zhao</a>,
-              <a>Bozhen Hu</a>,
-              <a>Zhangyang Gao</a>,
-             <a>Cheng Tan</a>,
-             <a>Yue Liu</a>,
-              <a>Siyuan Li</a>,
-              <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ICLR 2023</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-                @inproceedings{Xia2023MoleBERTRP,
-                    title={Mole-BERT: Rethinking Pre-training Graph Neural Networks for Molecules},
-                    author={Jun Xia and Chengshuai Zhao and Bozhen Hu and Zhangyang Gao and Cheng Tan and Yue Liu and Siyuan Li and Stan Z. Li},
-                    booktitle={International Conference on Learning Representations},
-                    year={2023},
-                    url={https://api.semanticscholar.org/CorpusID:259298531}
-                  }
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- Survey -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">A Systematic Survey of Chemical Pre-trained Models</B><BR>
-              <strong><u>Jun Xia</u></strong>,
-              <a> Yanqiao Zhu</a>,  
-              <a> Yuanqi Du</a>,
-              <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>IJCAI 2023 Survey Track</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{Xia2022ASS,
-    title={A Systematic Survey of Chemical Pre-trained Models},
-    author={Jun Xia and Yanqiao Zhu and Yuanqi Du and Stan Z.Li},
-    booktitle={International Joint Conference on Artificial Intelligence},
-    year={2022},
-    url={https://api.semanticscholar.org/CorpusID:258352439}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-	<!-- ReNovo -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">ReNovo: Retrieval-Based De Novo Mass Spectrometry Peptide Sequencing</B><BR>
-<!-- Shaorong Chen, Jun Xia, Jingbo Zhou, Lecheng Zhang, Zhangyang Gao, Bozhen Hu, Cheng Tan, Wenjie Du, Stan Z. Li -->
-<!-- Sizhe Liu, Jun Xia, Lecheng Zhang, Yuchen Liu, Yue Liu, Wenjie Du, Zhangyang Gao, Bozhen Hu, Cheng Tan, hongxin xiang, Stan Z. Li -->
-	    <a>Shaorong Chen</a>,
-<strong><u>Jun Xia</u></strong>,
-	    <a>Jingbo Zhou</a>,
-	    <a>Lecheng Zhang</a>,   
-         <a>Stan Z.Li</a>.<BR>
-    <strong>ICLR 2025</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-anonymous2024novobench,
-title={NovoBench: Benchmarking Deep Learning-based {\textbackslash}emph\{De Novo\} Sequencing Methods in Proteomics},
-author={Anonymous},
-booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-year={2024},
-url={https://openreview.net/forum?id=RQlbMrA5XL}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-	<!-- FlexMol -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">FlexMol: A Flexible Toolkit for Benchmarking Molecular Relational Learning</B><BR>
-
-<!-- Sizhe Liu, Jun Xia, Lecheng Zhang, Yuchen Liu, Yue Liu, Wenjie Du, Zhangyang Gao, Bozhen Hu, Cheng Tan, hongxin xiang, Stan Z. Li -->
-	    <a>Sizhe Liu</a>,
-<strong><u>Jun Xia</u></strong>,
-	    <a>Lecheng Zhang</a>,
-	    <a>Yuchen Liu</a>,
-         <a>Stan Z.Li</a>.<BR>
-    <strong>NeurIPS 2024 Datasets and Benchmarks Track</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-anonymous2024novobench,
-title={NovoBench: Benchmarking Deep Learning-based {\textbackslash}emph\{De Novo\} Sequencing Methods in Proteomics},
-author={Anonymous},
-booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-year={2024},
-url={https://openreview.net/forum?id=RQlbMrA5XL}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-<!-- NovoBench -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">NovoBench: Benchmarking Deep Learning-based \emph{De Novo} Sequencing Methods in Proteomics</B><BR>
-        
-	    <a>Jingbo Zhou</a>,
-        <a>Shaorong Chen</a>,
-<strong><u>Jun Xia</u></strong>,
-	    <a>Sizhe Liu</a>,
-	    <a>Tianze Ling</a>,
-         <a>Stan Z.Li</a>.<BR>
-    <strong>NeurIPS 2024 Datasets and Benchmarks Track</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-anonymous2024novobench,
-title={NovoBench: Benchmarking Deep Learning-based {\textbackslash}emph\{De Novo\} Sequencing Methods in Proteomics},
-author={Anonymous},
-booktitle={The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-year={2024},
-url={https://openreview.net/forum?id=RQlbMrA5XL}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-<!-- CoSP -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">Cross-Gate MLP with Protein Complex Invariant Embedding is A One-Shot Antibody Designer</B><BR>
-	<a>Cheng Tan</a>,
-        <a>Zhangyang Gao</a>,
-	<a>Lirong Wu</a>,
-             <strong><u>Jun Xia</u></strong>,
-	    <a>Jiangbin Zheng</a>,
-	    <a>Xihong Yang</a>,
-	    <a>Yue Liu</a>,
-	    <a>Bozhen Hu</a>,
-             <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>AAAI 2024</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-    gao2023cosp,
-    title={CoSP: Co-supervised pretraining of pocket and ligand},
-    author={Zhangyang Gao and Cheng Tan and Jun Xia and Stan Z. Li},
-    booktitle={ECML-PKDD},
-    year={2023}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-<UL>
-    <LI>
-    <B style="color: #224b8d">KW-Design: Pushing the Limit of Protein Deign via Knowledge Refinement</B><BR>
-        <a>Zhangyang Gao</a>,
-            <a>Cheng Tan</a>,
-	    <a>Xingran Chen</a>,
-	    <a>Yijie Zhang</a>,
-             <strong><u>Jun Xia</u></strong>,
-	    <a>Siyuan Li</a>,
-             <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ICLR 2024</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-anonymous2024kwdesign,
-title={{KW}-Design: Pushing the Limit of Protein Deign via Knowledge Refinement},
-author={Anonymous},
-booktitle={The Twelfth International Conference on Learning Representations},
-year={2024},
-url={https://openreview.net/forum?id=mpqMVWgqjn}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-	
-<!-- CoSP -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">CoSP: Co-supervised pretraining of pocket and ligand</B><BR>
-        <a>Zhangyang Gao</a>,
-            <a>Cheng Tan</a>,
-             <strong><u>Jun Xia</u></strong>,
-             <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ECML 2023</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{
-    gao2023cosp,
-    title={CoSP: Co-supervised pretraining of pocket and ligand},
-    author={Zhangyang Gao and Cheng Tan and Jun Xia and Stan Z. Li},
-    booktitle={ECML-PKDD},
-    year={2023}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-
-<B>[Graph Machine Learning]</B>
-<!-- SimGRACE -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">SimGRACE: A Simple Framework for Graph Contrastive Learning without Data Augmentation</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-        <a >Lirong Wu</a>,
-        <a>Jintao Chen</a>,
-        <a href="https://www.researchgate.net/profile/Hu-Bozhen">Bozhen Hu</a>,
-        <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>WWW 2022, <font color="#DA1212">Most Influential WWW Papers</font> according to <a href="https://www.paperdigest.org/2023/01/most-influential-www-papers-2023-01/">Paper Digest</font></strong><BR>
-      [<a href="https://arxiv.org/pdf/2202.03104.pdf">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://github.com/junxia97/SimGRACE">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@article{Xia2022SimGRACEAS,
-    title={SimGRACE: A Simple Framework for Graph Contrastive Learning without Data Augmentation},
-    author={Jun Xia and Lirong Wu and Jintao Chen and Bozhen Hu and Stan Z. Li},
-    journal={Proceedings of the ACM Web Conference 2022},
-    year={2022},
-    url={https://api.semanticscholar.org/CorpusID:246634345}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- ProGCL -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">ProGCL: Rethinking Hard Negative Mining in Graph Contrastive Learning</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-        <a >Lirong Wu</a>,
-        <a>Ge Wang</a>,
-        <a>Jintao Chen</a>,
-        <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ICML 2022, <font color="#DA1212">Spotlight</font></strong><BR>
-      [<a href="https://arxiv.org/abs/2110.02027">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://github.com/junxia97/ProGCL">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{Xia2021ProGCLRH,
-    title={ProGCL: Rethinking Hard Negative Mining in Graph Contrastive Learning},
-    author={Jun Xia and Lirong Wu and Ge Wang and Jintao Chen and Stan Z. Li},
-    booktitle={International Conference on Machine Learning},
-    year={2021},
-    url={https://api.semanticscholar.org/CorpusID:249282506}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- TKDE -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">GNN Cleaner: Label Cleaner for Graph-structured Data</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-          
-        <a>Haitao Lin</a>,
-        <a>Yongjie Xu</a>,
-        <a>Cheng Tan</a>,
-        <a>Lirong Wu</a>,
-        <a>Bozhen Hu</a>,
-        <a>Siyuan Li</a>,
-         <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-      <strong>TKDE 2023</strong><BR>
-      <!-- <font color="#A6192E">"Let's think not just step by step, but also one by one."</font> <a href="https://twitter.com/astonzhangAZ/status/1579489453789581312" target="_blank" rel="noopener"><i class="fab fa-twitter big-icon" style=" font-size:20px;"></i></a><br>  -->
-      <!-- Featured in <a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a> (Adopted at 400 universities from 60 countries) <br> -->
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      <!-- [<a href="javascript:toggleBibtex('autocot_abs')" target=_self>Abstract</a>] -->
-      [<a href="javascript:toggleBibtex('autocot_bib')" target=_self>Bib</a>] 
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <!-- [<a href="https://www.bilibili.com/video/BV1t8411e7Ug/?share_source=copy_web&vd_source=ddb9b075165bf2d7ecf71a83ca75744a" target=_self>bilibili</a>] 
-      [<a href="https://bcmi.sjtu.edu.cn/~zhangzs/slides/CoT-zhuosheng.pdf">slides</a>] -->
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@article{xia2023gnn,
-    title={GNN Cleaner: Label Cleaner for Graph Structured Data},
-    author={Xia, Jun and Lin, Haitao and Xu, Yongjie and Tan, Cheng and Wu, Lirong and Li, Siyuan and Li, Stan Z},
-    journal={IEEE Transactions on Knowledge and Data Engineering},
-    year={2023},
-    publisher={IEEE}
-    } 
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-<!-- ICDE -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">DiscoGNN: A Sample-Efficient Framework for Graph Self-supervised Representation Learning</B><BR>
-        <strong><u>Jun Xia</u></strong>,
-        <a>Shaorong Chen</a>,
-        <a>Yue Liu</a>,
-        <a>Zhangyang Gao</a>,
-        <a>Jiangbing Zheng</a>,
-        <a>Xihong Yang</a>,
-         <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-      <strong>ICDE 2024</strong><BR>
-      <!-- <font color="#A6192E">"Let's think not just step by step, but also one by one."</font> <a href="https://twitter.com/astonzhangAZ/status/1579489453789581312" target="_blank" rel="noopener"><i class="fab fa-twitter big-icon" style=" font-size:20px;"></i></a><br>  -->
-      <!-- Featured in <a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a> (Adopted at 400 universities from 60 countries) <br> -->
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      <!-- [<a href="javascript:toggleBibtex('autocot_abs')" target=_self>Abstract</a>] -->
-      [<a href="javascript:toggleBibtex('autocot_bib')" target=_self>Bib</a>] 
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <!-- [<a href="https://www.bilibili.com/video/BV1t8411e7Ug/?share_source=copy_web&vd_source=ddb9b075165bf2d7ecf71a83ca75744a" target=_self>bilibili</a>] 
-      [<a href="https://bcmi.sjtu.edu.cn/~zhangzs/slides/CoT-zhuosheng.pdf">slides</a>] -->
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@article{xia2023gnn,
-    title={DiscoGNN: A Sample-Efficient Framework for Graph Self-supervised Representation Learning},
-    author={Xia, Jun and Chen, Shaorong and Liu, Yue and Gao, Zhangyang and Zheng, Jiangbing and Yang, Xihong and Li, Stan Z},
-    journal={International Conference on Data Engineering (ICDE)},
-    year={2024},
-    publisher={IEEE}
-    } 
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- Dink-Net -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">Dink-Net: Neural Clustering on Large Graphs</B><BR>
-        <a>Yue Liu</a>,
-             <a>Ke Liang</a>,
-              <strong><u>Jun Xia</u></strong>,
-              <a> Sihang Zhou</a>,  
-              <a> Xihong Yang</a>,
-             <a> Xingwang Liu</a>,
-              <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ICML 2023</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{Liu2023DinkNetNC,
-title={Dink-Net: Neural Clustering on Large Graphs},
-author={Yue Liu and Kenny Ye Liang and Jun Xia and Sihang Zhou and Xihong Yang and Xinwang Liu and Stan Z. Li},
-booktitle={International Conference on Machine Learning},
-year={2023},
-url={https://api.semanticscholar.org/CorpusID:258967414}
-}
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- GraphMixup -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">GraphMixup: Improving Class-Imbalanced Node Classification on Graphs by Self-supervised Context Prediction</B><BR>
-        <a>Lirong Wu</a>,
-        <strong><u>Jun Xia</u></strong>,
-        <a>Haitao Lin</a>,
-         <a>Zhangyang Gao</a>,
-        <a>Cheng Tan</a>,
-         <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ECML 2023</strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{Wu2022GraphMixupIC,
-    title={GraphMixup: Improving Class-Imbalanced Node Classification by Reinforcement Mixup and Self-supervised Context Prediction},
-    author={Lirong Wu and Jun Xia and Zhangyang Gao and Haitao Lin and Cheng Tan and Stan Z. Li},
-    booktitle={ECML/PKDD},
-    year={2022},
-    url={https://api.semanticscholar.org/CorpusID:252507534}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-
-
-<!-- GraphMixup -->
-<!-- <UL>
-    <LI>
-    <B style="color: #224b8d">GraphMixup: Improving Class-Imbalanced Node Classification on Graphs by Self-supervised Context Prediction</B><BR>
-        <a>Lirong Wu</a>,
-        <strong><u>Jun Xia</u></strong>,
-        <a>Haitao Lin</a>,
-         <a>Zhangyang Gao</a>,
-        <a>Cheng Tan</a>,
-         <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ECML 2022<BR>
-      [<a href="https://2022.ecmlpkdd.org/wp-content/uploads/2022/09/sub_375.pdf">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://github.com/LirongWu/GraphMixup">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-@inproceedings{Wu2022GraphMixupIC,
-    title={GraphMixup: Improving Class-Imbalanced Node Classification by Reinforcement Mixup and Self-supervised Context Prediction},
-    author={Lirong Wu and Jun Xia and Zhangyang Gao and Haitao Lin and Cheng Tan and Stan Z. Li},
-    booktitle={ECML/PKDD},
-    year={2022},
-    url={https://api.semanticscholar.org/CorpusID:252507534}
-    }
-              </pre>
-       </div>
-    </LI>
-</UL> -->
-
-
-
-<B>[Others]</B>
-<!-- Co-learning -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">Co-learning: Learning from Noisy Labels with Self-supervision</B><BR>
-        <a href="https://scholar.google.com/citations?user=6kTV6aMAAAAJ&hl=zh-CN">Cheng Tan</a>,
-        <strong><u>Jun Xia</u></strong>,
-        <a >Lirong Wu</a>,
-        <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>ACM MM 2021, <font color="#DA1212">Oral Presentation</font></strong><BR>
-      [<a href="https://arxiv.org/abs/2108.04063">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://github.com/junxia97/Co-training-based_noisy-label-learning">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-                @article{Tan2021ColearningLF,
-                    title={Co-learning: Learning from Noisy Labels with Self-supervision},
-                    author={Cheng Tan and Jun Xia and Lirong Wu and Stan Z. Li},
-                    journal={Proceedings of the 29th ACM International Conference on Multimedia},
-                    year={2021},
-                    url={https://api.semanticscholar.org/CorpusID:236956719}
-                  }
-              </pre>
-       </div>
-    </LI>
-</UL>
-<!-- CVT-SLR -->
-<UL>
-    <LI>
-    <B style="color: #224b8d">CVT-SLR: Contrastive Visual-Textual Transformation for Sign Language Recognition with Variational Alignment</B><BR>
-        <a>Jiangbin Zheng</a>,
-        <a>Yile Wang</a>,
-        <a>Cheng Tan</a>,
-        <a>Siyuan Li</a>,
-       <a>Ge Wang</a>,
-       <strong><u>Jun Xia</u></strong>,
-        <a>Siyuan Li</a>,
-        <a href="https://scholar.google.com/citations?user=Y-nyLGIAAAAJ&hl=zh-CN">Stan Z.Li</a>.<BR>
-                <strong>CVPR 2023, <font color="#DA1212">Highlight (Oral) Presentation</font></strong><BR>
-      [<a href="https://junxia97.github.io/">PDF</a>]
-      [<a href="javascript:toggleBibtex('autoagent_bib')" target=_self>Bib</a>]
-      [<a href="https://junxia97.github.io/">Code</a>]
-      <br>
-          
-        <div id=autocot_bib class=blockcontent style="DISPLAY: none">
-            <pre>
-                @article{Zheng2023CVTSLRCV,
-                    title={CVT-SLR: Contrastive Visual-Textual Transformation for Sign Language Recognition with Variational Alignment},
-                    author={Jiangbin Zheng and Yile Wang and Cheng Tan and Siyuan Li and Ge Wang and Jun Xia and Yidong Chen and Stan Z. Li},
-                    journal={2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-                    year={2023},
-                    pages={23141-23150},
-                    url={https://api.semanticscholar.org/CorpusID:257482618}
-                  }
-              </pre>
-       </div>
-    </LI>
-</UL>
-
-
-<H2 id="Honors">Awards & Honors</H2>
-<UL>
-<li><p>2024: CIE-Tencent Doctoral Research Incentive Project((首届)中国电子学会—腾讯博士生科研激励计划). </P> 
-<li><p>2024: Fundamental Research Project for Young Ph.D. students from NSFC(首批国家自然科学基金青年学生基础研究项目(博士生)). </P> 
-<li> <p>2024: DAAD AINet Fellowship. </P> 
-<li> <p>2023: Rising Star in AI (awarded by KAUST AI Initiative headed by Prof. <a href="https://scholar.google.com/citations?user=gLnCTgIAAAAJ&hl=en">Jürgen Schmidhuber</a>) </P>	
-<li> <p>2023: Apple AI/ML Scholar Finalist</P>		
-<li> <p>2023: NeurIPS Scholar Award.</P>	
-<li> <p>2023: Suwu Scholarship.</P>
-<li> <p>2023: Westlake Presidential Awards (The highest honor at Westlake Univ.).</P>
-<li> <p> 2022: National Scholarship.</P>
-<li> <p> 2022: ICML 2022 Participation Grant.</P>
-<li> <p> 2021: Outstanding Student Cadre, Zhejiang University.</P>
-<li> <p> 2021: Outstanding Student, Zhejiang University.</P>
-<li> <p> 2020: Outstanding Graduate of Central South University.</P>
-<li> <p> 2019: The Interdisciplinary Contest in Modeling (ICM) of America, Meritorious Winner (The First Prize).</P>
-<li> <p> 2018: World Robot Competition in World Robot Conference (WRC) 2018, The Third Prize.</P>
-<li> <p> 2017: National Scholarship.</P>
-<li> <p> 2017, 2018 & 2019: The First Class Scholarship, Central South University.</P>
-<li> <p> 2017, 2018 & 2019: Outstanding Student, Central South University.</P>
-<!-- <li> <p> 2017, 2018 & 2019: Outstanding student, Central South University.</P> -->
-</UL>
-
-<h2 id="Service">Academic Service</h2>
-<ul>
-  <!-- <li> Organization: 
-<ul style="padding-left: 40px;">
-  	<li>Co-chair of <a href="http://cips-cl.org/static/CCL2022/en/cclCommittee/comChairs/index.html">CCL Student Seminar</a>, 2022
-    <li>President of IBM Tech Club at Wuhan University, 2014-2015.
-	</ul>
-<li>  Area Chair: ICLR 2023 TinyPapers -->
-<li> Area Chair: NeurIPS 2025
-    <li>  Program Committee Member or Reviewer:
-  <ul style="padding-left: 40px;">
-  	<li>Conferences: ICLR, ICML, NeurIPS, CVPR, KDD, ACL, SDM, ECML, ICASSP, etc.
-	<ul style="padding-left: 40px;">
-	</ul>
-    <p>
-  </ul>
-    <li> Journal Reviewer: Nature Communications, IEEE TPAMI, IEEE TIP, ACM TKDD, IEEE TNNLS, Neural Networks, etc.
-</ul>
-
-<h2 id="Co-working">Co-working Students</h2>
-(<i>* I am working with some visiting/undergraduate students at Westlake with Chair Prof. Stan Z. Li</i>)
-<ul>
-    <li> <a href="https://yueliu1999.github.io/">Yue Liu</a> (MS Student at NUDT &rarr; NUS)
-   <li> <a href="https://openreview.net/profile?id=~Lecheng_Zhang1">Lecheng Zhang</a> (Undergraduate Student at Westlake &rarr; UC Berkery)
-   <li> <a href="https://steven51516.github.io/">Sizhe Liu</a> (Undergraduate Student at USC)
-	<li> <a href="">Yunhua Zhong</a> (Undergraduate Student at NJU)
-<li> <a href="">Jiabei Cheng</a> (Ph.D. Student at SJTU)   
-    <li> <a href="https://scholar.google.com/citations?user=t3dWX7EAAAAJ&hl=en">Xiaojun Shan</a> (Undergraduate Student at UESTC &rarr; UCSD)
-    <li> <a href="https://openreview.net/profile?id=~Xiao_Zhu4">Xiao Zhu</a> (Undergraduate Student at BUPT &rarr; HKUST(GZ))
-<!--     <li> <a href="https://xinlong-yang.github.io/">Xinlong Yang</a> (MS Student at PKU)
-    <li> <a href="https://scholar.google.com/citations?user=pF5p7_IAAAAJ&hl=zh-CN">Hongcheng Gao</a> (MS Student at ICT@Chinese Academy of Sciences) -->
-    <li> <a href="https://chengshuaizhao0.github.io/">Chengshuai Zhao</a> (Undergraduate Student at UC Irvine &rarr; ASU)
-</ul>
-<br>
-<br>
-<!-- 
-<H2 id="ETC">Hobbies</H2>
-
-s
-<UL>
-<li>  Traveling</li>
-<li>  Playing video games</li>
-<li>  Listening to music, playing instruments (esp. ErHu <img style="max-height:18px;" src="imgs/erhu.png"/>)</li>
-</UL>
-<img class="img-responsive" style="max-height:200px;"src="imgs/travel.png"/>
--->
-<!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=zxZDYfyEXORqzLXb2xdcz8KlkhqCKdmyljrKMv2-N9s"></script> -->
-
-</div>
- </DIV></BODY>
-
-
-</HTML>
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple page navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding page section
+                    const targetPage = this.getAttribute('data-page');
+                    pageSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === targetPage) {
+                            section.classList.add('active');
+                        }
+                    });
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
