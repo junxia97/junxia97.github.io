@@ -316,6 +316,28 @@
             border-radius: 4px;
             margin-right: 0.5rem;
         }
+        
+        /* Home section styles */
+        .home-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .home-section {
+            margin-bottom: 3rem;
+        }
+        
+        .awards-list li, .service-list li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -354,12 +376,10 @@
     <div class="container">
         <!-- Home Section -->
         <section id="home" class="page-section active">
-            <div class="row mb-5">
-                <div class="col-md-4">
+            <div class="home-header">
+                <div class="profile-container">
                     <img src="jun_profile.jpg" class="img-fluid profile-img" alt="Jun Xia">
-                </div>
-                <div class="col-md-8">
-                    <h1>Jun Xia <img src="imgs/sign.jpg" style="max-height:80px;" alt="Signature"/></h1>
+                    <h1 class="mt-4">Jun Xia <img src="imgs/sign.jpg" style="max-height:80px;" alt="Signature"/></h1>
                     <p class="lead">Assistant Professor<br>
                     Information Hub<br>
                     <a href="https://www.hkust-gz.edu.cn/">HKUST(GZ)</a> | <a href="https://hkust.edu.hk/">HKUST</a></p>
@@ -377,61 +397,105 @@
                 </div>
             </div>
 
-            <h2 class="section-title">Profile</h2>
-            <p style="text-align:justify; text-justify:inter-ideograph;">
-                Jun Xia is a Tenure-Track Assistant Professor at the Hong Kong University of Science and Technology (Guangzhou), leading the AI for Multimodality and Science (AIMS) Lab with research focused on multimodal large models and AI for life sciences. 
-                He also holds an affiliated appointment at The Hong Kong University of Science and Technology (Clear Water Bay, Hong Kong). He received his Ph.D. from a joint program between Westlake University and Zhejiang University.
-            </p>
+            <!-- Profile Section -->
+            <div class="home-section">
+                <h2 class="section-title">Profile</h2>
+                <p style="text-align:justify; text-justify:inter-ideograph;">
+                    Jun Xia is a Tenure-Track Assistant Professor at the Hong Kong University of Science and Technology (Guangzhou), leading the AI for Multimodality and Science (AIMS) Lab with research focused on multimodal large models and AI for life sciences. 
+                    He also holds an affiliated appointment at The Hong Kong University of Science and Technology (Clear Water Bay, Hong Kong). He received his Ph.D. from a joint program between Westlake University and Zhejiang University.
+                </p>
+                
+                <p style="text-align:justify; text-justify:inter-ideograph;">
+                    <span class="highlight">🌟 Hiring</span>: We are actively seeking funded visiting students, research assistant and self-motivated Ph.D. students. Since July 2022, almost every visiting student who worked with me has published papers at top conferences such as ICML, NeurIPS, and ICLR during their visit.
+                    If you are interested, please don't hesitate to contact me via <a href="mailto:junxia@hkust-gz.edu.cn">Email</a>.
+                </p>
+            </div>
             
-            <p style="text-align:justify; text-justify:inter-ideograph;">
-                <span class="highlight">🌟 Hiring</span>: We are actively seeking funded visiting students, research assistant and self-motivated Ph.D. students. Since July 2022, almost every visiting student who worked with me has published papers at top conferences such as ICML, NeurIPS, and ICLR during their visit.
-                If you are interested, please don't hesitate to contact me via <a href="mailto:junxia@hkust-gz.edu.cn">Email</a>.
-            </p>
-
-            <h2 class="section-title">News <img src="new_gif_1.gif" height="25" alt="New"></h2>
-            <div class="news-container">
-                <ul class="list-unstyled">
-                    <li class="news-item"><strong>(2025.04)</strong> Invited to serve as an <strong>Area Chair for NeurIPS 2025</strong>.</li>
-                    <li class="news-item"><strong>(2025.01)</strong> Four papers on AI for Life Science are accepted in <strong>ICLR 2025</strong>.</li>
-                    <li class="news-item"><strong>(2024.12)</strong> A paper on AIDD is accepted in <strong>Bioinformatics</strong>.</li>
-                    <li class="news-item"><strong>(2024.10)</strong> A paper on computational proteomics is accepted in <strong>AIDrugX@NeurIPS 2024</strong> as Spotlight.</li>
-                    <li class="news-item"><strong>(2024.10)</strong> Seven papers on computational biology and GNNs are accepted in <strong>NeurIPS 2024</strong>.</li>
+            <!-- News Section -->
+            <div class="home-section">
+                <h2 class="section-title">News <img src="new_gif_1.gif" height="25" alt="New"></h2>
+                <div class="news-container">
+                    <ul class="list-unstyled">
+                        <li class="news-item"><strong>(2025.XX)</strong> Invited as an area chair for ICLR 2026 and AI4Science Workshop at NeurIPS 2025.</li>
+                        <li class="news-item"><strong>(2025.XX)</strong> Four papers are accepted by IJCAI 2025.</li>
+                        <li class="news-item"><strong>(2025.04)</strong> Invited to serve as an <strong>Area Chair for NeurIPS 2025</strong>.</li>
+                        <li class="news-item"><strong>(2025.01)</strong> Four papers on AI for Life Science are accepted in <strong>ICLR 2025</strong>.</li>
+                        <li class="news-item"><strong>(2024.12)</strong> A paper on AIDD is accepted in <strong>Bioinformatics</strong>.</li>
+                    </ul>
+                </div>
+                <p class="mt-2"><a href="#" data-page="news-archive">View all news →</a></p>
+            </div>
+            
+            <!-- Awards Section -->
+            <div class="home-section">
+                <h2 class="section-title">Awards & Honors</h2>
+                <ul class="list-disc awards-list">
+                    <li><p>2024: CIE-Tencent Doctoral Research Incentive Project ((首届)中国电子学会—腾讯博士生科研激励计划).</p></li>
+                    <li><p>2024: Fundamental Research Project for Young Ph.D. students from NSFC (首批国家自然科学基金青年学生基础研究项目(博士生)).</p></li>
+                    <li><p>2024: DAAD AINet Fellowship.</p></li>
+                    <li><p>2023: Rising Star in AI (awarded by KAUST AI Initiative headed by Prof. <a href="https://scholar.google.com/citations?user=gLnCTgIAAAAJ&hl=en">Jürgen Schmidhuber</a>)</p></li>
+                    <li><p>2023: Apple AI/ML Scholar Finalist</p></li>
+                    <li><p>2023: NeurIPS Scholar Award.</p></li>
+                    <li><p>2023: Suwu Scholarship.</p></li>
+                    <li><p>2023: Westlake Presidential Awards (The highest honor at Westlake Univ.).</p></li>
+                    <li><p>2022: National Scholarship. 2017: National Scholarship.</p></li>
                 </ul>
             </div>
-            <p class="mt-2"><a href="#" data-page="news-archive">View all news →</a></p>
-
-            <h2 class="section-title">Selected Publications</h2>
-            <p>
-                Discover the <a href="#" data-page="publications"><strong>full list</strong></a> | 
-                <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ&hl=en" target="_blank"><img src="./logos/google_scholar.jpg" height="20" alt="google scholar"></a> | 
-                <a href="https://www.semanticscholar.org/author/Jun-Xia/2069551655" target="_blank"><img src="./logos/semantic_scholar_logo.png" height="20" alt="semantic scholar"></a> | 
-                <a href="https://dblp.org/pid/22/3650.html" target="_blank"> <img src="./logos/dblp_logo.png" height="22" alt="dblp"></a>
-            </p>
-
-            <div class="publication-item">
-                <div class="pub-title">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</div>
-                <div class="author-list"><strong>Jun Xia</strong>, Sizhe Liu, Jingbo Zhou, Shaorong Chen, hongxin xiang, Zicheng Liu, Yue Liu, Stan Z. Li.</div>
-                <div><strong>ICLR 2025; AI4DrugX@NeurIPS 2024, Spotlight</strong></div>
-                <div class="mt-1">
-                    [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
-                    [<a href="#">Bib</a>]
-                    [<a href="https://junxia97.github.io/">Code</a>]
-                </div>
+            
+            <!-- Professional Service Section -->
+            <div class="home-section">
+                <h2 class="section-title">Professional Service</h2>
+                <ul class="list-disc service-list">
+                    <li>Area Chair:
+                        <ul style="padding-left: 40px;">
+                            <li>ICLR 2026</li>
+                            <li>NeurIPS 2025</li>
+                        </ul>
+                    </li>
+                    <li>Program Committee Member or Reviewer:
+                        <ul style="padding-left: 40px;">
+                            <li>Conferences: ICLR, ICML, NeurIPS, CVPR, KDD, ACL, SDM, ECML, ICASSP, etc.</li>
+                        </ul>
+                    </li>
+                    <li>Journal Reviewer: Nature Communications, IEEE TPAMI, IEEE TIP, ACM TKDD, IEEE TNNLS, Neural Networks, etc.</li>
+                </ul>
             </div>
 
-            <div class="publication-item">
-                <div class="pub-title">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</div>
-                <div class="author-list"><strong>Jun Xia∗</strong>, Shaorong Chen∗, Jingbo Zhou, Tianze Ling, Wenjie Du, Sizhe Liu, Stan Z. Li.</div>
-                <div><strong>NeurIPS 2024</strong></div>
-                <div class="mt-1">
-                    [<a href="https://junxia97.github.io/">PDF</a>]
-                    [<a href="#">Bib</a>]
-                    [<a href="https://junxia97.github.io/">Code</a>]
-                </div>
-            </div>
+            <!-- Selected Publications -->
+            <div class="home-section">
+                <h2 class="section-title">Selected Publications</h2>
+                <p>
+                    Discover the <a href="#" data-page="publications"><strong>full list</strong></a> | 
+                    <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ&hl=en" target="_blank"><img src="./logos/google_scholar.jpg" height="20" alt="google scholar"></a> | 
+                    <a href="https://www.semanticscholar.org/author/Jun-Xia/2069551655" target="_blank"><img src="./logos/semantic_scholar_logo.png" height="20" alt="semantic scholar"></a> | 
+                    <a href="https://dblp.org/pid/22/3650.html" target="_blank"> <img src="./logos/dblp_logo.png" height="22" alt="dblp"></a>
+                </p>
 
-            <div class="text-center mt-4">
-                <a href="#" data-page="publications" class="btn btn-primary btn-primary-custom">View All Publications</a>
+                <div class="publication-item">
+                    <div class="pub-title">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</div>
+                    <div class="author-list"><strong>Jun Xia</strong>, Sizhe Liu, Jingbo Zhou, Shaorong Chen, hongxin xiang, Zicheng Liu, Yue Liu, Stan Z. Li.</div>
+                    <div><strong>ICLR 2025; AI4DrugX@NeurIPS 2024, Spotlight</strong></div>
+                    <div class="mt-1">
+                        [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="https://junxia97.github.io/">Code</a>]
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</div>
+                    <div class="author-list"><strong>Jun Xia∗</strong>, Shaorong Chen∗, Jingbo Zhou, Tianze Ling, Wenjie Du, Sizhe Liu, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="https://junxia97.github.io/">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="https://junxia97.github.io/">Code</a>]
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="#" data-page="publications" class="btn btn-primary btn-primary-custom">View All Publications</a>
+                </div>
             </div>
         </section>
 
@@ -603,7 +667,8 @@
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="spectraai">SpectraAI</button>
                     <button class="filter-btn" data-filter="gnn">Graph Neural Networks</button>
-                    <button class="filter-btn" data-filter="molecular">Molecular Machine Learning</button>
+                    <button class="filter-btn" data-filter="aidd">AIDD (AI for Drug Discovery)</button>
+                    <button class="filter-btn" data-filter="aivc">AIVC (AI for Virtual Cell)</button>
                     <button class="filter-btn" data-filter="others">Others</button>
                 </div>
                 
@@ -613,8 +678,7 @@
                     <button class="filter-btn" data-year="2024">2024</button>
                     <button class="filter-btn" data-year="2023">2023</button>
                     <button class="filter-btn" data-year="2022">2022</button>
-                    <button class="filter-btn" data-year="2021">2021</button>
-                    <button class="filter-btn" data-year="older">2020 & Earlier</button>
+                    <button class="filter-btn" data-year="2021earlier">2021 & Earlier</button>
                 </div>
             </div>
             
@@ -655,8 +719,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2025">
-                    <span class="pub-category">Others</span>
+                <div class="publication-item" data-category="aivc" data-year="2025">
+                    <span class="pub-category">AIVC (AI for Virtual Cell)</span>
                     <div class="pub-title">Electron Density-enhanced Molecular Geometry Learning</div>
                     <div class="author-list">Hongxin Xiang∗, Jun Xia∗ (Co-first Author), Xin Jin, Wenjie Du, Li Zeng, Xiangxiang Zeng.</div>
                     <div><strong>IJCAI 2025</strong></div>
@@ -667,8 +731,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="gnn" data-year="2025">
-                    <span class="pub-category">Graph Neural Networks</span>
+                <div class="publication-item" data-category="aivc" data-year="2025">
+                    <span class="pub-category">AIVC (AI for Virtual Cell)</span>
                     <div class="pub-title">GRAPE: Heterogeneous Graph Representation Learning for Genetic Perturbation with Coding and Non-Coding Biotype</div>
                     <div class="author-list">Changxi Chi∗, Jun Xia∗ (Co-first Author), Jingbo Zhou, Jiabei Chen, Stan Z. Li.</div>
                     <div><strong>IJCAI 2025</strong></div>
@@ -679,8 +743,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2025">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2025">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">Iterative Substructure Extraction for Molecular Relational Learning with Interactive Graph Information Bottleneck</div>
                     <div class="author-list">Shuai Zhang, Junfeng Fang, hongxin xiang, Xuqiang Li, Jun Xia† (Corresponding Author), Ye Wei, Wenjie Du, Yang Wang.</div>
                     <div><strong>ICLR 2025</strong></div>
@@ -691,8 +755,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2025">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2025">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">MeToken: Uniform Micro-environment Token Boosts Post-Translational Modification Prediction</div>
                     <div class="author-list">Cheng Tan, Zhenxiao Cao, Zhangyang Gao, Lirong Wu, Siyuan Li, Yufei Huang, Jun Xia, Bozhen Hu, Stan Z. Li.</div>
                     <div><strong>ICLR 2025</strong></div>
@@ -716,8 +780,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2024">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">FlexMol: A Flexible Toolkit for Benchmarking Molecular Relational Learning</div>
                     <div class="author-list">Sizhe Liu∗, Jun Xia∗† (Corresponding & Co-first Author), Lecheng Zhang, Yuchen Liu, Yue Liu, Wenjie Du, Zhangyang Gao, Bozhen Hu, Cheng Tan, hongxin xiang, Stan Z. Li.</div>
                     <div><strong>NeurIPS 2024</strong></div>
@@ -740,8 +804,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2024">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">SP-DTI: Subpocket-Informed Transformer for Drug-Target Interaction Prediction</div>
                     <div class="author-list">Sizhe Liu, Yuchen Liu, Haofeng Xu, Jun Xia† (Corresponding Author), Stan Z. Li.</div>
                     <div><strong>Bioinformatics 2024</strong></div>
@@ -764,8 +828,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2024">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">Cross-Gate MLP with Protein Complex Invariant Embedding is A One-Shot Antibody Designer</div>
                     <div class="author-list">Cheng Tan, Zhangyang Gao, Lirong Wu, Jun Xia, Jiangbin Zheng, Xihong Yang, Yue Liu, Bozhen Hu, Stan Z. Li.</div>
                     <div><strong>AAAI 2024, Oral Presentation</strong></div>
@@ -776,8 +840,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aivc" data-year="2024">
+                    <span class="pub-category">AIVC (AI for Virtual Cell)</span>
                     <div class="pub-title">Learning Complete Protein Representation by Dynamically Coupling of Sequence and Structure</div>
                     <div class="author-list">Bozhen Hu, Cheng Tan, Jun Xia, Yue Liu, Lirong Wu, Jiangbin Zheng, Yongjie Xu, Yufei Huang, Stan Z. Li.</div>
                     <div><strong>NeurIPS 2024</strong></div>
@@ -788,8 +852,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2024">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">KW-Design: Pushing the Limit of Protein Design via Knowledge Refinement</div>
                     <div class="author-list">Zhangyang Gao, Cheng Tan, Xingran Chen, Yijie Zhang, Jun Xia, Siyuan Li, Stan Z. Li.</div>
                     <div><strong>ICLR 2024</strong></div>
@@ -812,8 +876,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aivc" data-year="2024">
+                    <span class="pub-category">AIVC (AI for Virtual Cell)</span>
                     <div class="pub-title">ProtGO: Function-Guided Protein Modeling for Unified Representation Learning</div>
                     <div class="author-list">Bozhen Hu, Cheng Tan, Yongjie Xu, Zhangyang Gao, Jun Xia, Lirong Wu, Stan Z. Li.</div>
                     <div><strong>NeurIPS 2024</strong></div>
@@ -836,8 +900,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2024">
-                    <span class="pub-category">Others</span>
+                <div class="publication-item" data-category="aidd" data-year="2024">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">An Image-enhanced Molecular Graph Representation Learning Framework</div>
                     <div class="author-list">Hongxin Xiang, Shuting Jin, Jun Xia, Man Zhou, Jianmin Wang, Li Zeng, Xiangxiang Zeng.</div>
                     <div><strong>IJCAI 2024</strong></div>
@@ -848,8 +912,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2024">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2024">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">MMGNN: A Molecular Merged Graph Neural Network for Explainable Solvation Free Energy Prediction</div>
                     <div class="author-list">Wenjie Du, Junfeng Fang, Jun Xia, Ziyuan Zhao, Yang Wang, Shuai Zhang, Di Wu.</div>
                     <div><strong>IJCAI 2024</strong></div>
@@ -860,8 +924,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2024">
-                    <span class="pub-category">Others</span>
+                <div class="publication-item" data-category="aivc" data-year="2024">
+                    <span class="pub-category">AIVC (AI for Virtual Cell)</span>
                     <div class="pub-title">Deciphering RNA Secondary Structure Prediction: A Probabilistic K-Rook Matching Perspective</div>
                     <div class="author-list">Cheng Tan, Zhangyang Gao, Hanqun Cao, Xingran Chen, Ge Wang, Lirong Wu, Jun Xia, Jiangbin Zheng, Stan Z. Li.</div>
                     <div><strong>ICML 2024</strong></div>
@@ -873,8 +937,8 @@
                 </div>
                 
                 <!-- 2023 Publications -->
-                <div class="publication-item" data-category="molecular" data-year="2023">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2023">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">Mole-BERT: Rethinking Pre-training Graph Neural Networks for Molecules</div>
                     <div class="author-list">Jun Xia∗, Chengshuai Zhao∗, Bozhen Hu, Zhangyang Gao, Stan Z. Li.</div>
                     <div><strong>ICLR 2023</strong></div>
@@ -897,8 +961,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2023">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2023">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">A Systematic Survey of Chemical Pre-trained Models</div>
                     <div class="author-list">Jun Xia∗, Yanqiao Zhu∗, Yuanqi Du∗, Stan Z. Li.</div>
                     <div><strong>IJCAI 2023</strong></div>
@@ -932,8 +996,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="molecular" data-year="2023">
-                    <span class="pub-category">Molecular Machine Learning</span>
+                <div class="publication-item" data-category="aidd" data-year="2023">
+                    <span class="pub-category">AIDD (AI for Drug Discovery)</span>
                     <div class="pub-title">CoSP: Co-supervised pre-training of pocket and ligand</div>
                     <div class="author-list">Zhangyang Gao∗, Cheng Tan∗, Jun Xia, Stan Z. Li.</div>
                     <div><strong>ECML 2023</strong></div>
@@ -1041,8 +1105,8 @@
                     </div>
                 </div>
                 
-                <!-- 2021 Publications -->
-                <div class="publication-item" data-category="others" data-year="2021">
+                <!-- 2021 & Earlier Publications -->
+                <div class="publication-item" data-category="others" data-year="2021earlier">
                     <span class="pub-category">Others</span>
                     <div class="pub-title">OT-Cleaner: Label Correction as Optimal Transport</div>
                     <div class="author-list">Jun Xia∗, Cheng Tan∗, Lirong Wu, Yongjie Xu, Stan Z. Li.</div>
@@ -1054,7 +1118,7 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2021">
+                <div class="publication-item" data-category="others" data-year="2021earlier">
                     <span class="pub-category">Others</span>
                     <div class="pub-title">Wordreg: Mitigating the Gap between Training and Inference with Worst-Case Drop Regularization</div>
                     <div class="author-list">Jun Xia∗, Ge Wang∗, Bozhen Hu, Cheng Tan, Jiangbin Zheng, Yongjie Xu, Stan Z. Li.</div>
@@ -1066,7 +1130,7 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2021">
+                <div class="publication-item" data-category="others" data-year="2021earlier">
                     <span class="pub-category">Others</span>
                     <div class="pub-title">Co-learning: Learning from noisy labels with self-supervision</div>
                     <div class="author-list">Cheng Tan, Jun Xia, Lirong Wu, Stan Z. Li.</div>
@@ -1078,7 +1142,7 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2021">
+                <div class="publication-item" data-category="others" data-year="2021earlier">
                     <span class="pub-category">Others</span>
                     <div class="pub-title">Invertible Manifold Learning for Dimension Reduction</div>
                     <div class="author-list">Siyuan Li, Haitao Lin, Zelin Zang, Lirong Wu, Jun Xia, Stan Z. Li.</div>
@@ -1090,8 +1154,8 @@
                     </div>
                 </div>
                 
-                <div class="publication-item" data-category="others" data-year="2021">
-                    <span class="pub-category">Others</span>
+                <div class="publication-item" data-category="aivc" data-year="2021earlier">
+                    <span class="pub-category">AIVC (AI for Virtual Cell)</span>
                     <div class="pub-title">Structure-Preserving and Batch-Correcting Visualization Using Deep Manifold Transformation for Single-cell RNA-Seq Profiles</div>
                     <div class="author-list">Yongjie Xu, Zelin Zang, Jun Xia, Cheng Tan, Stan Z. Li.</div>
                     <div><strong>Communication Biology</strong></div>
@@ -1319,4 +1383,3 @@
     </script>
 </body>
 </html>
-    
