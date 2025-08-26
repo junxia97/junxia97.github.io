@@ -12,12 +12,27 @@
             --primary-color: #224b8d;
             --secondary-color: #DA1212;
             --light-bg: #f8f9fa;
+            --text-color: #333;
+            --bg-color: #ffffff;
+        }
+        
+        /* 护眼模式样式 */
+        body.eye-protection {
+            --bg-color: #f0f2e9;
+            --text-color: #3a4035;
+            --light-bg: #e6e9d9;
         }
         
         body {
-            font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             padding-top: 80px;
-            color: #333;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 1140px; /* 限制最大宽度，使其不致过宽 */
         }
         
         .navbar-custom {
@@ -77,6 +92,12 @@
         
         .publication-item {
             margin-bottom: 1.5em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .publication-item:last-child {
+            border-bottom: none;
         }
         
         .pub-title {
@@ -131,6 +152,170 @@
         .news-container::-webkit-scrollbar-thumb:hover {
             background: #aaa;
         }
+        
+        /* 链接样式 - 移除下划线 */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* 实验室成员样式 */
+        .lab-member {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .member-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .lab-section {
+            margin-bottom: 3rem;
+        }
+        
+        .alumni-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .visiting-students-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 护眼模式按钮 */
+        .eye-protection-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .eye-protection-toggle:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Openings section styles */
+        .opening-section {
+            margin-bottom: 2rem;
+        }
+        
+        .opening-section h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .requirements-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Research section styles */
+        .research-area {
+            margin-bottom: 2.5rem;
+        }
+        
+        .research-area h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .research-topics {
+            padding-left: 1.5rem;
+        }
+        
+        .research-topics li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Publications filter styles */
+        .filter-container {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-btn {
+            background-color: white;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .filter-btn:hover:not(.active) {
+            background-color: #f0f5ff;
+        }
+        
+        .year-filter {
+            margin-top: 1rem;
+        }
+        
+        /* Publication category label */
+        .pub-category {
+            display: inline-block;
+            background-color: #e8f0fe;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -180,6 +365,8 @@
                     <a href="https://www.hkust-gz.edu.cn/">HKUST(GZ)</a> | <a href="https://hkust.edu.hk/">HKUST</a></p>
                     <p>
                         Email: <a href="mailto:junxia@hkust-gz.edu.cn">junxia@hkust-gz.edu.cn</a><br>
+                        Tel: (020) 88333858<br>
+                        Office: W3-535, HKUST(GZ)
                     </p>
                     <div class="mt-3">
                         <a href="https://twitter.com/jun_westlake" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -215,7 +402,7 @@
 
             <h2 class="section-title">Selected Publications</h2>
             <p>
-                Discover the <a href="pub.html"><strong>full list</strong></a> | 
+                Discover the <a href="#" data-page="publications"><strong>full list</strong></a> | 
                 <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ&hl=en" target="_blank"><img src="./logos/google_scholar.jpg" height="20" alt="google scholar"></a> | 
                 <a href="https://www.semanticscholar.org/author/Jun-Xia/2069551655" target="_blank"><img src="./logos/semantic_scholar_logo.png" height="20" alt="semantic scholar"></a> | 
                 <a href="https://dblp.org/pid/22/3650.html" target="_blank"> <img src="./logos/dblp_logo.png" height="22" alt="dblp"></a>
@@ -223,8 +410,8 @@
 
             <div class="publication-item">
                 <div class="pub-title">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</div>
-                <div class="author-list"><strong>Jun Xia</strong>, Sizhe Liu, Jingbo Zhou, Shaorong Chen, Stan Z.Li</div>
-                <div><strong>ICLR 2025; AIDrugX@NeurIPS 2024 (Spotlight)</strong></div>
+                <div class="author-list"><strong>Jun Xia</strong>, Sizhe Liu, Jingbo Zhou, Shaorong Chen, hongxin xiang, Zicheng Liu, Yue Liu, Stan Z. Li.</div>
+                <div><strong>ICLR 2025; AI4DrugX@NeurIPS 2024, Spotlight</strong></div>
                 <div class="mt-1">
                     [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
                     [<a href="#">Bib</a>]
@@ -234,7 +421,7 @@
 
             <div class="publication-item">
                 <div class="pub-title">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</div>
-                <div class="author-list"><strong>Jun Xia</strong>, Shaorong Chen, Jingbo Zhou, Tianze Ling, Stan Z.Li</div>
+                <div class="author-list"><strong>Jun Xia∗</strong>, Shaorong Chen∗, Jingbo Zhou, Tianze Ling, Wenjie Du, Sizhe Liu, Stan Z. Li.</div>
                 <div><strong>NeurIPS 2024</strong></div>
                 <div class="mt-1">
                     [<a href="https://junxia97.github.io/">PDF</a>]
@@ -248,31 +435,673 @@
             </div>
         </section>
 
-        <!-- AIMS Lab Section (Placeholder) -->
+        <!-- AIMS Lab Section -->
         <section id="aims-lab" class="page-section">
             <h2 class="section-title">AIMS Lab</h2>
-            <div class="alert alert-info">
-                This section is under construction. Content will be added soon.
-            </div>
             <p>The AI for Multimodality and Science (AIMS) Lab focuses on cutting-edge research in multimodal AI and its applications in scientific discovery.</p>
-        </section>
-
-        <!-- Research Section (Placeholder) -->
-        <section id="research" class="page-section">
-            <h2 class="section-title">Research</h2>
-            <div class="alert alert-info">
-                This section is under construction. Content will be added soon.
+            
+            <!-- Ph.D. Students -->
+            <div class="lab-section">
+                <h3>Ph.D. Students</h3>
+                <div class="row">
+                    <div class="col-md-4 lab-member">
+                        <div class="member-photo">
+                            <img src="https://picsum.photos/id/1012/300/300" alt="Zheng Fang">
+                        </div>
+                        <div class="member-name">Zheng Fang</div>
+                        <div class="member-info">MS from NUS</div>
+                    </div>
+                    <div class="col-md-4 lab-member">
+                        <div class="member-photo">
+                            <img src="https://picsum.photos/id/1005/300/300" alt="Yifan Li">
+                        </div>
+                        <div class="member-name">Yifan Li</div>
+                        <div class="member-info">MS from SJTU</div>
+                    </div>
+                    <div class="col-md-4 lab-member">
+                        <div class="member-photo">
+                            <img src="https://picsum.photos/id/1074/300/300" alt="Haitao Yu">
+                        </div>
+                        <div class="member-name">Haitao Yu</div>
+                        <div class="member-info">MS from SEU</div>
+                    </div>
+                </div>
             </div>
-            <p>Our research spans multiple areas including AI for biochemistry, graph machine learning, and multimodal learning.</p>
+            
+            <!-- M.Phil. Students -->
+            <div class="lab-section">
+                <h3>M.Phil. Students</h3>
+                <div class="row">
+                    <div class="col-md-4 lab-member">
+                        <div class="member-photo">
+                            <img src="https://picsum.photos/id/1025/300/300" alt="Yusen Tan">
+                        </div>
+                        <div class="member-name">Yusen Tan</div>
+                        <div class="member-info">BE from SWU</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visiting Students and RA -->
+            <div class="lab-section">
+                <h3>Visiting Students and RA</h3>
+                
+                <h4>Ph.D. students:</h4>
+                <ul class="list-unstyled visiting-students-list">
+                    <li>Yunhua Zhong (Ph.D. Student from HKU)</li>
+                    <li>Taoyong Cui (Ph.D. Student from CUHK)</li>
+                    <li>Dongxin Lv (Ph.D. Student from Westlake)</li>
+                    <li>ChuangXin Zhao (Ph.D. Student from CAS)</li>
+                    <li>Jie Yang (Ph.D. Student from FDU)</li>
+                </ul>
+                
+                <h4>MS:</h4>
+                <ul class="list-unstyled visiting-students-list">
+                    <li>Zhijin Dong (MS Student from PKU)</li>
+                    <li>Yuniang Jiang (MS Student from THU)</li>
+                    <li>Chuanwen Feng (MS Student from USTC)</li>
+                    <li>Pan Liu (MS Student from CSU)</li>
+                    <li>Jinxi Xia (MS Student from UIUC)</li>
+                </ul>
+                
+                <h4>BE:</h4>
+                <ul class="list-unstyled visiting-students-list">
+                    <li>Chenming Xu (BE Student from NJU)</li>
+                    <li>Bo Liu (BE Student from JLU)</li>
+                    <li>Zhuoli Ouyang (BE Student from SUSTech)</li>
+                    <li>Ziyi Liu (BE Student from BUPT)</li>
+                    <li>Wei Luo (BE Student from XJTU)</li>
+                </ul>
+            </div>
+            
+            <!-- Alumni -->
+            <div class="lab-section">
+                <h3>Alumni</h3>
+                <ul class="list-unstyled alumni-list">
+                    <li><a href="">Yue Liu</a> (MS Student from NUDT → NUS)</li>
+                    <li><a href="https://openreview.net/profile?id=~Lecheng_Zhang1">Lecheng Zhang</a> (Undergraduate Student from Westlake → UC Berkery)</li>
+                    <li><a href="https://steven51516.github.io/">Sizhe Liu</a> (Undergraduate Student from USC)</li>
+                    <li><a href="">Yunhua Zhong</a> (Undergraduate Student from NJU)</li>
+                    <li><a href="">Jiabei Cheng</a> (Ph.D. Student from SJTU)</li>
+                    <li><a href="https://scholar.google.com/citations?user=t3dWX7EAAAAJ&hl=en">Xiaojun Shan</a> (Undergraduate Student from UESTC → UCSD)</li>
+                    <li><a href="https://openreview.net/profile?id=~Xiao_Zhu4">Xiao Zhu</a> (Undergraduate Student from BUPT → HKUST(GZ))</li>
+                    <li><a href="https://chengshuaizhao0.github.io/">Chengshuai Zhao</a> (Undergraduate Student from UC Irvine → ASU)</li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Publications Section (Placeholder) -->
+        <!-- Research Section -->
+        <section id="research" class="page-section">
+            <h2 class="section-title">Research Focus</h2>
+            <p>
+                The AIMS Lab focuses on advancing research in <strong>SpectraAI (AI for Spectral Data Analysis)</strong>, <strong>Graph Neural Networks</strong>, and <strong>Molecular Machine Learning</strong>. 
+                Leveraging deep learning, graph neural networks, Transformers, and causal inference, we tackle complex challenges in computational biology, proteomics, and drug discovery. 
+                Our work also emphasizes building large-scale datasets and open-source tools to drive progress in the field.
+            </p>
+            
+            <div class="research-area">
+                <h3>SpectraAI (AI for Spectral Data Analysis)</h3>
+                <p>Core Focus: Developing advanced AI models for analyzing mass spectrometry data and enabling de novo peptide sequencing.</p>
+                <ul class="research-topics list-disc">
+                    <li>De novo peptide sequencing from mass spectrometry data using deep learning approaches</li>
+                    <li>Bridging database search and de novo sequencing for more accurate peptide identification</li>
+                    <li>Addressing data biases in proteomics through robust learning frameworks</li>
+                    <li>Systematic evaluation and benchmarking of deep learning-based sequencing methods</li>
+                    <li>Retrieval-based approaches for enhancing peptide sequencing accuracy</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Graph Neural Networks</h3>
+                <p>Core Focus: Advancing graph representation learning with novel contrastive learning frameworks and self-supervised methods.</p>
+                <ul class="research-topics list-disc">
+                    <li>Graph contrastive learning without data augmentation</li>
+                    <li>Hard negative mining strategies for improving graph representation learning</li>
+                    <li>Sample-efficient self-supervised learning for graph-structured data</li>
+                    <li>Label noise correction for graph neural networks</li>
+                    <li>Heterogeneous graph learning for biological and chemical data</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Molecular Machine Learning</h3>
+                <p>Core Focus: Developing advanced machine learning models for molecular property prediction and drug discovery.</p>
+                <ul class="research-topics list-disc">
+                    <li>Pre-training strategies for graph neural networks in molecular modeling</li>
+                    <li>Drug-target interaction prediction using geometric and structural information</li>
+                    <li>Limitations of deep models for molecular property prediction and solutions</li>
+                    <li>Comprehensive surveys of chemical pre-trained models</li>
+                    <li>Tools and frameworks for benchmarking molecular relational learning</li>
+                </ul>
+            </div>
+            
+            <div class="research-area">
+                <h3>Others</h3>
+                <p>Core Focus: Exploring other related areas in machine learning and artificial intelligence.</p>
+                <ul class="research-topics list-disc">
+                    <li>Label noise correction using optimal transport</li>
+                    <li>Regularization techniques for mitigating gaps between training and inference</li>
+                    <li>Cross-modal learning for various applications</li>
+                    <li>Clustering algorithms for graph-structured data</li>
+                    <li>Manifold learning for dimension reduction</li>
+                </ul>
+            </div>
+            
+            <div class="mt-5">
+                <h3>Below are our team's Publications</h3>
+                <p class="mt-3"><a href="#" data-page="publications" class="btn btn-primary btn-primary-custom">View All Publications</a></p>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
         <section id="publications" class="page-section">
             <h2 class="section-title">Publications</h2>
-            <div class="alert alert-info">
-                This section is under construction. Full publications list will be added soon.
+            <p>Listed by categories in reversed chronological order, where ∗ indicates equal contribution and † denotes the corresponding author.</p>
+            
+            <div class="filter-container">
+                <div class="filter-buttons category-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="spectraai">SpectraAI</button>
+                    <button class="filter-btn" data-filter="gnn">Graph Neural Networks</button>
+                    <button class="filter-btn" data-filter="molecular">Molecular Machine Learning</button>
+                    <button class="filter-btn" data-filter="others">Others</button>
+                </div>
+                
+                <div class="filter-buttons year-filters">
+                    <button class="filter-btn active" data-year="all">All Years</button>
+                    <button class="filter-btn" data-year="2025">2025</button>
+                    <button class="filter-btn" data-year="2024">2024</button>
+                    <button class="filter-btn" data-year="2023">2023</button>
+                    <button class="filter-btn" data-year="2022">2022</button>
+                    <button class="filter-btn" data-year="2021">2021</button>
+                    <button class="filter-btn" data-year="older">2020 & Earlier</button>
+                </div>
             </div>
-            <p>Explore my complete publication record across various conferences and journals.</p>
+            
+            <div class="publications-list">
+                <!-- 2025 Publications -->
+                <div class="publication-item" data-category="spectraai" data-year="2025">
+                    <span class="pub-category">SpectraAI</span>
+                    <div class="pub-title">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</div>
+                    <div class="author-list">Jun Xia, Sizhe Liu, Jingbo Zhou, Shaorong Chen, hongxin xiang, Zicheng Liu, Yue Liu, Stan Z. Li.</div>
+                    <div><strong>ICLR 2025; AI4DrugX@NeurIPS 2024, Spotlight</strong></div>
+                    <div class="mt-1">
+                        [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="https://junxia97.github.io/">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="spectraai" data-year="2025">
+                    <span class="pub-category">SpectraAI</span>
+                    <div class="pub-title">ReNovo: Retrieval-Based De Novo Mass Spectrometry Peptide Sequencing</div>
+                    <div class="author-list">Shaorong Chen∗, Jun Xia∗† (Corresponding & Co-first Author), Jingbo Zhou, Lecheng Zhang, Zhangyang Gao, Bozhen Hu, Cheng Tan, Wenjie Du, Stan Z. Li.</div>
+                    <div><strong>ICLR 2025</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="spectraai" data-year="2025">
+                    <span class="pub-category">SpectraAI</span>
+                    <div class="pub-title">A comprehensive and systematic review for deep learning-based de novo peptide sequencing</div>
+                    <div class="author-list">Jun Xia, Jingbo Zhou, Shaorong Chen, Tianze Ling, Stan Z. Li.</div>
+                    <div><strong>IJCAI 2025</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2025">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Electron Density-enhanced Molecular Geometry Learning</div>
+                    <div class="author-list">Hongxin Xiang∗, Jun Xia∗ (Co-first Author), Xin Jin, Wenjie Du, Li Zeng, Xiangxiang Zeng.</div>
+                    <div><strong>IJCAI 2025</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="gnn" data-year="2025">
+                    <span class="pub-category">Graph Neural Networks</span>
+                    <div class="pub-title">GRAPE: Heterogeneous Graph Representation Learning for Genetic Perturbation with Coding and Non-Coding Biotype</div>
+                    <div class="author-list">Changxi Chi∗, Jun Xia∗ (Co-first Author), Jingbo Zhou, Jiabei Chen, Stan Z. Li.</div>
+                    <div><strong>IJCAI 2025</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2025">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">Iterative Substructure Extraction for Molecular Relational Learning with Interactive Graph Information Bottleneck</div>
+                    <div class="author-list">Shuai Zhang, Junfeng Fang, hongxin xiang, Xuqiang Li, Jun Xia† (Corresponding Author), Ye Wei, Wenjie Du, Yang Wang.</div>
+                    <div><strong>ICLR 2025</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2025">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">MeToken: Uniform Micro-environment Token Boosts Post-Translational Modification Prediction</div>
+                    <div class="author-list">Cheng Tan, Zhenxiao Cao, Zhangyang Gao, Lirong Wu, Siyuan Li, Yufei Huang, Jun Xia, Bozhen Hu, Stan Z. Li.</div>
+                    <div><strong>ICLR 2025</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <!-- 2024 Publications -->
+                <div class="publication-item" data-category="spectraai" data-year="2024">
+                    <span class="pub-category">SpectraAI</span>
+                    <div class="pub-title">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</div>
+                    <div class="author-list">Jun Xia∗, Shaorong Chen∗, Jingbo Zhou, Tianze Ling, Wenjie Du, Sizhe Liu, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="https://junxia97.github.io/">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="https://junxia97.github.io/">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">FlexMol: A Flexible Toolkit for Benchmarking Molecular Relational Learning</div>
+                    <div class="author-list">Sizhe Liu∗, Jun Xia∗† (Corresponding & Co-first Author), Lecheng Zhang, Yuchen Liu, Yue Liu, Wenjie Du, Zhangyang Gao, Bozhen Hu, Cheng Tan, hongxin xiang, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="spectraai" data-year="2024">
+                    <span class="pub-category">SpectraAI</span>
+                    <div class="pub-title">NovoBench: Benchmarking Deep Learning-based De Novo Sequencing Methods in Proteomics</div>
+                    <div class="author-list">Jingbo Zhou∗, Shaorong Chen∗, Jun Xia∗† (Corresponding & Co-first Author), Sizhe Liu, Tianze Ling, Wenjie Du, Yue Liu, Jianwei Yin, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">SP-DTI: Subpocket-Informed Transformer for Drug-Target Interaction Prediction</div>
+                    <div class="author-list">Sizhe Liu, Yuchen Liu, Haofeng Xu, Jun Xia† (Corresponding Author), Stan Z. Li.</div>
+                    <div><strong>Bioinformatics 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="gnn" data-year="2024">
+                    <span class="pub-category">Graph Neural Networks</span>
+                    <div class="pub-title">DiscoGNN: A Sample-Efficient Framework for Graph Self-supervised Representation Learning</div>
+                    <div class="author-list">Jun Xia∗, Shaorong Chen∗, Yue Liu, Zhangyang Gao, Jiangbing Zheng, Xihong Yang, Stan Z. Li.</div>
+                    <div><strong>IEEE ICDE 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">Cross-Gate MLP with Protein Complex Invariant Embedding is A One-Shot Antibody Designer</div>
+                    <div class="author-list">Cheng Tan, Zhangyang Gao, Lirong Wu, Jun Xia, Jiangbin Zheng, Xihong Yang, Yue Liu, Bozhen Hu, Stan Z. Li.</div>
+                    <div><strong>AAAI 2024, Oral Presentation</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">Learning Complete Protein Representation by Dynamically Coupling of Sequence and Structure</div>
+                    <div class="author-list">Bozhen Hu, Cheng Tan, Jun Xia, Yue Liu, Lirong Wu, Jiangbin Zheng, Yongjie Xu, Yufei Huang, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">KW-Design: Pushing the Limit of Protein Design via Knowledge Refinement</div>
+                    <div class="author-list">Zhangyang Gao, Cheng Tan, Xingran Chen, Yijie Zhang, Jun Xia, Siyuan Li, Stan Z. Li.</div>
+                    <div><strong>ICLR 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2024">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">A Graph is Worth K Words: Euclideanizing Graph using Pure Transformer</div>
+                    <div class="author-list">Zhangyang Gao, Daize Dong, Cheng Tan, Jun Xia, Bozhen Hu, Stan Z. Li.</div>
+                    <div><strong>ICML 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">ProtGO: Function-Guided Protein Modeling for Unified Representation Learning</div>
+                    <div class="author-list">Bozhen Hu, Cheng Tan, Yongjie Xu, Zhangyang Gao, Jun Xia, Lirong Wu, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="gnn" data-year="2024">
+                    <span class="pub-category">Graph Neural Networks</span>
+                    <div class="pub-title">Deep Graph Neural Networks via Posteriori-Sampling-based Node-Adaptative Residual Module</div>
+                    <div class="author-list">Jingbo Zhou, Yixuan Du, Ruqiong Zhang, Jun Xia, Zhizhi Yu, Zelin Zang, Di Jin, Carl Yang, Rui Zhang, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2024">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">An Image-enhanced Molecular Graph Representation Learning Framework</div>
+                    <div class="author-list">Hongxin Xiang, Shuting Jin, Jun Xia, Man Zhou, Jianmin Wang, Li Zeng, Xiangxiang Zeng.</div>
+                    <div><strong>IJCAI 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2024">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">MMGNN: A Molecular Merged Graph Neural Network for Explainable Solvation Free Energy Prediction</div>
+                    <div class="author-list">Wenjie Du, Junfeng Fang, Jun Xia, Ziyuan Zhao, Yang Wang, Shuai Zhang, Di Wu.</div>
+                    <div><strong>IJCAI 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2024">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Deciphering RNA Secondary Structure Prediction: A Probabilistic K-Rook Matching Perspective</div>
+                    <div class="author-list">Cheng Tan, Zhangyang Gao, Hanqun Cao, Xingran Chen, Ge Wang, Lirong Wu, Jun Xia, Jiangbin Zheng, Stan Z. Li.</div>
+                    <div><strong>ICML 2024</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <!-- 2023 Publications -->
+                <div class="publication-item" data-category="molecular" data-year="2023">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">Mole-BERT: Rethinking Pre-training Graph Neural Networks for Molecules</div>
+                    <div class="author-list">Jun Xia∗, Chengshuai Zhao∗, Bozhen Hu, Zhangyang Gao, Stan Z. Li.</div>
+                    <div><strong>ICLR 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="spectraai" data-year="2023">
+                    <span class="pub-category">SpectraAI</span>
+                    <div class="pub-title">Understanding the Limitations of Deep Models for Molecular Property Prediction: Insights and Solutions</div>
+                    <div class="author-list">Jun Xia∗, Lecheng Zhang∗, Xiao Zhu, Stan Z. Li.</div>
+                    <div><strong>NeurIPS 2023; Combio@ICML 2023, Spotlight Talk</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2023">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">A Systematic Survey of Chemical Pre-trained Models</div>
+                    <div class="author-list">Jun Xia∗, Yanqiao Zhu∗, Yuanqi Du∗, Stan Z. Li.</div>
+                    <div><strong>IJCAI 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2023">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Dink-Net: Neural Clustering on Large Graphs</div>
+                    <div class="author-list">Yue Liu, Ke Liang, Jun Xia, Sihang Zhou, Xihong Yang, Xingwang Liu, Stan Z. Li.</div>
+                    <div><strong>ICML 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2023">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">CVT-SLR: Contrastive Visual-Textual Transformation for Sign Language Recognition with Variational Alignment</div>
+                    <div class="author-list">Jiangbin Zheng, Yile Wang, Cheng Tan, Siyuan Li, Ge Wang, Jun Xia, Yidong Chen, Stan Z. Li.</div>
+                    <div><strong>CVPR 2023, Highlight (Oral) Presentation</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="molecular" data-year="2023">
+                    <span class="pub-category">Molecular Machine Learning</span>
+                    <div class="pub-title">CoSP: Co-supervised pre-training of pocket and ligand</div>
+                    <div class="author-list">Zhangyang Gao∗, Cheng Tan∗, Jun Xia, Stan Z. Li.</div>
+                    <div><strong>ECML 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2023">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Temporal Attention Unit: Towards Efficient Spatiotemporal Predictive Learning</div>
+                    <div class="author-list">Cheng Tan, Zhangyang Gao, Lirong Wu, Jun Xia, Jiangbin Zheng, Stan Z. Li.</div>
+                    <div><strong>CVPR 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2023">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Reinforcement Graph Clustering with Unknown Cluster Number</div>
+                    <div class="author-list">Yue Liu, Ke Liang, Jun Xia, Xihong Yang, sihang zhou, Meng Liu, Xinwang Liu, Stan Z. Li.</div>
+                    <div><strong>ACM MM 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2023">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">CONVERT: Contrastive Graph Clustering with Reliable Augmentation</div>
+                    <div class="author-list">Xihong Yang, Cheng Tan, Yue Liu, Ke Liang, Siwei Wang, sihang zhou, Jun Xia, Stan Z. Li, Xinwang Liu, En Zhu.</div>
+                    <div><strong>ACM MM 2023</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <!-- 2022 Publications -->
+                <div class="publication-item" data-category="gnn" data-year="2022">
+                    <span class="pub-category">Graph Neural Networks</span>
+                    <div class="pub-title">SimGRACE: A Simple Framework for Graph Contrastive Learning without Data Augmentation</div>
+                    <div class="author-list">Jun Xia∗, Lirong Wu∗, Jintao Chen, Bozhen Hu, Stan Z. Li.</div>
+                    <div><strong>WWW 2022, Most Influential Papers</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="gnn" data-year="2022">
+                    <span class="pub-category">Graph Neural Networks</span>
+                    <div class="pub-title">ProGCL: Rethinking Hard Negative Mining in Graph Contrastive Learning</div>
+                    <div class="author-list">Jun Xia, Lirong Wu, Jintao Chen, Ge Wang, Stan Z. Li.</div>
+                    <div><strong>ICML 2022, Spotlight</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2022">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">GraphMixup: Improving Class-Imbalanced Node Classification on Graphs by Self-supervised Context Prediction</div>
+                    <div class="author-list">Lirong Wu∗, Jun Xia∗ (Co-first Author), Zhangyang Gao, Stan Z. Li.</div>
+                    <div><strong>ECML 2022, Oral Presentation</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2022">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Using Context-to-Vector with Graph Retrofitting to Improve Word Embeddings</div>
+                    <div class="author-list">Jiangbin Zheng, Yile Wang, Ge Wang, Jun Xia, Yue Zhang, Stan Z. Li.</div>
+                    <div><strong>ACL 2022</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2022">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Generalized Clustering and Multi-Manifold Learning With Geometric Structure Preservation</div>
+                    <div class="author-list">Lirong Wu, Zicheng Liu, Jun Xia, Zelin Zang, Siyuan Li, Stan Z. Li.</div>
+                    <div><strong>WACV 2022</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <!-- 2021 Publications -->
+                <div class="publication-item" data-category="others" data-year="2021">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">OT-Cleaner: Label Correction as Optimal Transport</div>
+                    <div class="author-list">Jun Xia∗, Cheng Tan∗, Lirong Wu, Yongjie Xu, Stan Z. Li.</div>
+                    <div><strong>IEEE ICASSP 2021</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2021">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Wordreg: Mitigating the Gap between Training and Inference with Worst-Case Drop Regularization</div>
+                    <div class="author-list">Jun Xia∗, Ge Wang∗, Bozhen Hu, Cheng Tan, Jiangbin Zheng, Yongjie Xu, Stan Z. Li.</div>
+                    <div><strong>IEEE ICASSP 2021</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2021">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Co-learning: Learning from noisy labels with self-supervision</div>
+                    <div class="author-list">Cheng Tan, Jun Xia, Lirong Wu, Stan Z. Li.</div>
+                    <div><strong>ACM MM 2021, Oral Presentation</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2021">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Invertible Manifold Learning for Dimension Reduction</div>
+                    <div class="author-list">Siyuan Li, Haitao Lin, Zelin Zang, Lirong Wu, Jun Xia, Stan Z. Li.</div>
+                    <div><strong>ECML 2021</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+                
+                <div class="publication-item" data-category="others" data-year="2021">
+                    <span class="pub-category">Others</span>
+                    <div class="pub-title">Structure-Preserving and Batch-Correcting Visualization Using Deep Manifold Transformation for Single-cell RNA-Seq Profiles</div>
+                    <div class="author-list">Yongjie Xu, Zelin Zang, Jun Xia, Cheng Tan, Stan Z. Li.</div>
+                    <div><strong>Communication Biology</strong></div>
+                    <div class="mt-1">
+                        [<a href="#">PDF</a>]
+                        [<a href="#">Bib</a>]
+                        [<a href="#">Code</a>]
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Photos Section (Placeholder) -->
@@ -284,13 +1113,51 @@
             <p>A collection of photos from conferences, lab events, and academic activities.</p>
         </section>
 
-        <!-- Openings Section (Placeholder) -->
+        <!-- Openings Section -->
         <section id="openings" class="page-section">
             <h2 class="section-title">Openings</h2>
-            <div class="alert alert-info">
-                This section is under construction. Detailed information will be added soon.
+            
+            <div class="opening-section">
+                <p>We are offering multiple research positions in DM/AI and its applications in spatio-temporal domains. Positions include PhD, Mphil, Postdoc, RA, and Visiting Scholars.</p>
+                
+                <p>All admitted postgraduate students receive full scholarships (¥15K/month for PhD, ¥10K/month for MPhil). RAs receive competitive salaries and project bonuses. Students applying for Fall 2024 can contact us or apply for an RA position first.</p>
+                
+                <p><strong>中文版</strong><br>
+                我们提供多个数据挖掘/人工智能及其在时空领域应用方向的研究职位，包括博士、硕士、博士后、研究助理和访问学者。</p>
+                
+                <p>所有录取的研究生均享受全额奖学金（博士每月1.5万元，硕士每月1万元）。研究助理享受有竞争力的薪资和项目奖金。申请2024年秋季入学的学生可以联系我们，或先申请研究助理职位。</p>
             </div>
-            <p>We are always looking for motivated students and researchers to join our team. Multiple positions are available.</p>
+            
+            <div class="opening-section">
+                <h3>Contact Info</h3>
+                <p>To apply, email your CV (education, publications, internships, etc.), transcripts, and representative papers/projects to <a href="mailto:junxia@hkust-gz.edu.cn">junxia@hkust-gz.edu.cn</a>. Use the subject format “Year-Position-Your Name-Your Affiliation” (e.g., “23Fall-PhD-Jay Chou-THU”).</p>
+                
+                <p>We will evaluate all applications promptly. Due to high email volume, we may not respond to every inquiry. If you pass the resume screening, you will receive an email for an interview. If you do not receive any reply within one month, you will not enter the next round. If you remain strongly interested, you may email us again after one month. Thank you for your patience.</p>
+            </div>
+            
+            <div class="opening-section">
+                <h3>PhD Applications</h3>
+                <p>PhD student requirements are listed below. For MPhil students, please contact me and sign up for the Redbird Mphil class, choosing a academic supervisor after 6 months. For Postdoc/RA/Intern applications, we will schedule online meetings individually.</p>
+                
+                <p>We prioritize individuals with CS and DS backgrounds but also welcome excellent students in GIS and transportation.</p>
+                
+                <h4>General Requirements:</h4>
+                <ul class="list-disc requirements-list">
+                    <li>Applicants should have a strong interest in AI and DS research, independent thinking, and a desire to produce influential results.</li>
+                    <li>Strong math and programming skills, Linux experience, and a willingness to learn are essential.</li>
+                    <li>A spirit of scientific research, openness, and collaboration is crucial.</li>
+                    <li>Good English writing skills are required, meeting the English admissions requirements of HKUST.</li>
+                </ul>
+                
+                <h4>Preferred Qualifications:</h4>
+                <p>Applicants must meet at least one of the following requirements. Priority will be given to those who meet multiple requirements:</p>
+                <ul class="list-disc requirements-list">
+                    <li>Have relevant research or project experience in DM and AI, with publications in top conferences or journals as the primary author (at least one first-author CCF-A paper required).</li>
+                    <li>Have internship experience in industry or a research institution, with a deep and systematic understanding of AI/DM applications and outstanding achievements during the internship.</li>
+                    <li>Have achieved top levels in competitions such as ACM ICPC, MCM/ICM, KDD Cup, or Kaggle.</li>
+                    <li>Have extensive experience as a full-stack engineer.</li>
+                </ul>
+            </div>
         </section>
 
         <!-- News Archive Section (Placeholder) -->
@@ -309,9 +1176,36 @@
         </div>
     </footer>
 
+    <!-- 护眼模式切换按钮 -->
+    <button class="eye-protection-toggle" id="eyeProtectionToggle" title="Toggle eye protection mode">
+        <i class="fas fa-eye"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Simple page navigation
+        // 护眼模式切换功能
+        const eyeProtectionToggle = document.getElementById('eyeProtectionToggle');
+        const body = document.body;
+        
+        // 检查本地存储中的偏好设置
+        if (localStorage.getItem('eyeProtectionMode') === 'enabled') {
+            body.classList.add('eye-protection');
+            eyeProtectionToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        }
+        
+        eyeProtectionToggle.addEventListener('click', function() {
+            body.classList.toggle('eye-protection');
+            
+            if (body.classList.contains('eye-protection')) {
+                localStorage.setItem('eyeProtectionMode', 'enabled');
+                eyeProtectionToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                localStorage.removeItem('eyeProtectionMode');
+                eyeProtectionToggle.innerHTML = '<i class="fas fa-eye"></i>';
+            }
+        });
+        
+        // 页面导航功能
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const pageSections = document.querySelectorAll('.page-section');
@@ -320,11 +1214,11 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Update active nav link
+                    // 更新活跃导航链接
                     navLinks.forEach(navLink => navLink.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Show corresponding page section
+                    // 显示对应页面部分
                     const targetPage = this.getAttribute('data-page');
                     pageSections.forEach(section => {
                         section.classList.remove('active');
@@ -333,11 +1227,96 @@
                         }
                     });
                     
-                    // Scroll to top
+                    // 滚动到顶部
                     window.scrollTo(0, 0);
+                });
+            });
+            
+            // 处理新闻存档链接
+            document.querySelector('a[data-page="news-archive"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 更新活跃导航链接
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                
+                // 显示新闻存档部分
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === 'news-archive') {
+                        section.classList.add('active');
+                    }
+                });
+                
+                // 滚动到顶部
+                window.scrollTo(0, 0);
+            });
+            
+            // 处理研究页面中的论文链接
+            const researchPubLink = document.querySelector('#research a[data-page="publications"]');
+            if (researchPubLink) {
+                researchPubLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 更新活跃导航链接
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    document.querySelector('.nav-link[data-page="publications"]').classList.add('active');
+                    
+                    // 显示论文部分
+                    pageSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === 'publications') {
+                            section.classList.add('active');
+                        }
+                    });
+                    
+                    // 滚动到顶部
+                    window.scrollTo(0, 0);
+                });
+            }
+            
+            // 论文筛选功能
+            const categoryFilters = document.querySelectorAll('.category-filters .filter-btn');
+            const yearFilters = document.querySelectorAll('.year-filters .filter-btn');
+            const publicationItems = document.querySelectorAll('.publication-item');
+            
+            let activeCategory = 'all';
+            let activeYear = 'all';
+            
+            function filterPublications() {
+                publicationItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const year = item.getAttribute('data-year');
+                    
+                    const categoryMatch = activeCategory === 'all' || category === activeCategory;
+                    const yearMatch = activeYear === 'all' || year === activeYear;
+                    
+                    if (categoryMatch && yearMatch) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+            
+            categoryFilters.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryFilters.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeCategory = this.getAttribute('data-filter');
+                    filterPublications();
+                });
+            });
+            
+            yearFilters.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    yearFilters.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeYear = this.getAttribute('data-year');
+                    filterPublications();
                 });
             });
         });
     </script>
 </body>
 </html>
+    
