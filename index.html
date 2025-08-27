@@ -61,12 +61,13 @@
         h1, h2, h3, h4, h5 {
             color: var(--primary-color);
             font-weight: 600;
+            margin-bottom: 0.8rem; /* 减小标题底部间距 */
         }
         
         .section-title {
             border-bottom: 1px solid #aaa;
             padding-bottom: 0.3em;
-            margin-bottom: 1.5em;
+            margin-bottom: 1rem; /* 减小标题与内容间距 */
         }
         
         .news-item {
@@ -319,24 +320,40 @@
         
         /* Home section styles */
         .home-header {
-            text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem; /* 减小顶部区域底部间距 */
         }
         
         .profile-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            align-items: center; /* 垂直居中对齐 */
             margin-bottom: 2rem;
+            flex-wrap: wrap; /* 响应式处理 */
+        }
+        
+        .profile-image-container {
+            flex: 0 0 auto;
+            margin-right: 2rem;
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 300px; /* 确保小屏幕有足够宽度 */
         }
         
         .home-section {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem; /* 减小各部分间距 */
         }
         
         .awards-list li, .service-list li {
             margin-bottom: 0.8rem;
             line-height: 1.6;
+        }
+        
+        /* 优化姓名标题样式 */
+        .name-title {
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
     </style>
 </head>
@@ -378,21 +395,26 @@
         <section id="home" class="page-section active">
             <div class="home-header">
                 <div class="profile-container">
-                    <img src="jun_profile.jpg" class="img-fluid profile-img" alt="Jun Xia">
-                    <h1 class="mt-4">Jun Xia <img src="imgs/sign.jpg" style="max-height:80px;" alt="Signature"/></h1>
-                    <p class="lead">Assistant Professor<br>
-                    Information Hub<br>
-                    <a href="https://www.hkust-gz.edu.cn/">HKUST(GZ)</a> | <a href="https://hkust.edu.hk/">HKUST</a></p>
-                    <p>
-                        Email: <a href="mailto:junxia@hkust-gz.edu.cn">junxia@hkust-gz.edu.cn</a><br>
-                        Tel: (020) 88333858<br>
-                        Office: W3-535, HKUST(GZ)
-                    </p>
-                    <div class="mt-3">
-                        <a href="https://twitter.com/jun_westlake" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ" class="social-icon"><i class="ai ai-google-scholar"></i></a>
-                        <a href="https://github.com/junxia97" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="https://www.zhihu.com/people/xia-jun-70-77" class="social-icon"><i class="fab fa-zhihu"></i></a>
+                    <div class="profile-image-container">
+                        <img src="jun_profile.jpg" class="img-fluid profile-img" alt="Jun Xia">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="name-title">Jun Xia <img src="imgs/sign.jpg" style="max-height:80px;" alt="Signature"/></h1>
+                        <p class="lead">Assistant Professor<br>
+                        Data Science and Analytics Thrust (DSA)<br>
+                        Information Hub<br>
+                        <a href="https://www.hkust-gz.edu.cn/">HKUST(GZ)</a> | <a href="https://hkust.edu.hk/">HKUST</a></p>
+                        <p>
+                            Email: <a href="mailto:junxia@hkust-gz.edu.cn">junxia@hkust-gz.edu.cn</a><br>
+                            Tel: (020) 88333858<br>
+                            Office: W4-535, HKUST(GZ)
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://twitter.com/jun_westlake" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ" class="social-icon"><i class="ai ai-google-scholar"></i></a>
+                            <a href="https://github.com/junxia97" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="https://www.zhihu.com/people/xia-jun-70-77" class="social-icon"><i class="fab fa-zhihu"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -400,7 +422,7 @@
             <!-- Profile Section -->
             <div class="home-section">
                 <h2 class="section-title">Profile</h2>
-                <p style="text-align:justify; text-justify:inter-ideograph;">
+                <p style="text-align:justify; text-justify:inter-ideograph; margin-top: 0;">
                     Jun Xia is a Tenure-Track Assistant Professor at the Hong Kong University of Science and Technology (Guangzhou), leading the AI for Multimodality and Science (AIMS) Lab with research focused on multimodal large models and AI for life sciences. 
                     He also holds an affiliated appointment at The Hong Kong University of Science and Technology (Clear Water Bay, Hong Kong). He received his Ph.D. from a joint program between Westlake University and Zhejiang University.
                 </p>
@@ -459,43 +481,6 @@
                     </li>
                     <li>Journal Reviewer: Nature Communications, IEEE TPAMI, IEEE TIP, ACM TKDD, IEEE TNNLS, Neural Networks, etc.</li>
                 </ul>
-            </div>
-
-            <!-- Selected Publications -->
-            <div class="home-section">
-                <h2 class="section-title">Selected Publications</h2>
-                <p>
-                    Discover the <a href="#" data-page="publications"><strong>full list</strong></a> | 
-                    <a href="https://scholar.google.com/citations?user=aPKKpSYAAAAJ&hl=en" target="_blank"><img src="./logos/google_scholar.jpg" height="20" alt="google scholar"></a> | 
-                    <a href="https://www.semanticscholar.org/author/Jun-Xia/2069551655" target="_blank"><img src="./logos/semantic_scholar_logo.png" height="20" alt="semantic scholar"></a> | 
-                    <a href="https://dblp.org/pid/22/3650.html" target="_blank"> <img src="./logos/dblp_logo.png" height="22" alt="dblp"></a>
-                </p>
-
-                <div class="publication-item">
-                    <div class="pub-title">Bridging the Gap between Database Search and De Novo Peptide Sequencing with SearchNovo</div>
-                    <div class="author-list"><strong>Jun Xia</strong>, Sizhe Liu, Jingbo Zhou, Shaorong Chen, hongxin xiang, Zicheng Liu, Yue Liu, Stan Z. Li.</div>
-                    <div><strong>ICLR 2025; AI4DrugX@NeurIPS 2024, Spotlight</strong></div>
-                    <div class="mt-1">
-                        [<a href="https://www.biorxiv.org/content/10.1101/2024.10.19.619186v1">PDF</a>]
-                        [<a href="#">Bib</a>]
-                        [<a href="https://junxia97.github.io/">Code</a>]
-                    </div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="pub-title">AdaNovo: Towards Robust De Novo Peptide Sequencing in Proteomics against Data Biases</div>
-                    <div class="author-list"><strong>Jun Xia∗</strong>, Shaorong Chen∗, Jingbo Zhou, Tianze Ling, Wenjie Du, Sizhe Liu, Stan Z. Li.</div>
-                    <div><strong>NeurIPS 2024</strong></div>
-                    <div class="mt-1">
-                        [<a href="https://junxia97.github.io/">PDF</a>]
-                        [<a href="#">Bib</a>]
-                        [<a href="https://junxia97.github.io/">Code</a>]
-                    </div>
-                </div>
-
-                <div class="text-center mt-4">
-                    <a href="#" data-page="publications" class="btn btn-primary btn-primary-custom">View All Publications</a>
-                </div>
             </div>
         </section>
 
