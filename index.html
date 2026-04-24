@@ -1407,142 +1407,119 @@
         <i class="fas fa-eye"></i>
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // 护眼模式切换功能
-        const eyeProtectionToggle = document.getElementById('eyeProtectionToggle');
-        const body = document.body;
-        
-        // 检查本地存储中的偏好设置
-        if (localStorage.getItem('eyeProtectionMode') === 'enabled') {
-            body.classList.add('eye-protection');
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 护眼模式
+    const eyeProtectionToggle = document.getElementById('eyeProtectionToggle');
+    const body = document.body;
+    if (localStorage.getItem('eyeProtectionMode') === 'enabled') {
+        body.classList.add('eye-protection');
+        eyeProtectionToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    }
+    eyeProtectionToggle.addEventListener('click', function() {
+        body.classList.toggle('eye-protection');
+        if (body.classList.contains('eye-protection')) {
+            localStorage.setItem('eyeProtectionMode', 'enabled');
             eyeProtectionToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        } else {
+            localStorage.removeItem('eyeProtectionMode');
+            eyeProtectionToggle.innerHTML = '<i class="fas fa-eye"></i>';
         }
-        
-        eyeProtectionToggle.addEventListener('click', function() {
-            body.classList.toggle('eye-protection');
-            
-            if (body.classList.contains('eye-protection')) {
-                localStorage.setItem('eyeProtectionMode', 'enabled');
-                eyeProtectionToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
-            } else {
-                localStorage.removeItem('eyeProtectionMode');
-                eyeProtectionToggle.innerHTML = '<i class="fas fa-eye"></i>';
-            }
-        });
-        
-        // 页面导航功能
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pageSections = document.querySelectorAll('.page-section');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // 更新活跃导航链接
-                    navLinks.forEach(navLink => navLink.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // 显示对应页面部分
-                    const targetPage = this.getAttribute('data-page');
-                    pageSections.forEach(section => {
-                        section.classList.remove('active');
-                        if (section.id === targetPage) {
-                            section.classList.add('active');
-                        }
-                    });
-                    
-                    // 滚动到顶部
-                    window.scrollTo(0, 0);
-                });
-            });
-            
-            // 处理新闻存档链接
-            document.querySelector('a[data-page="news-archive"]').addEventListener('click', function(e) {
+    });
+
+    // === 路由系统：独立 URL 支持 ===
+    document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('.page-section');
+        const routeMap = {
+            'home': '/',
+            'aims-lab': '/AIMS-Lab',
+            'research': '/Research',
+            'publications': '/Publications',
+            'photos': '/Photos',
+            'openings': '/Openings',
+            'news-archive': '/News-Archive'
+        };
+
+        function showPage(pageId) {
+            pageSections.forEach(sec => sec.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) targetSection.classList.add('active');
+
+            const activeLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (activeLink) activeLink.classList.add('active');
+
+            const path = routeMap[pageId] || '/';
+            window.history.pushState({ page: pageId }, '', path);
+            window.scrollTo(0, 0);
+        }
+
+        // 导航点击
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
                 e.preventDefault();
-                
-                // 更新活跃导航链接
-                navLinks.forEach(navLink => navLink.classList.remove('active'));
-                
-                // 显示新闻存档部分
-                pageSections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === 'news-archive') {
-                        section.classList.add('active');
-                    }
-                });
-                
-                // 滚动到顶部
-                window.scrollTo(0, 0);
-            });
-            
-            // 处理研究页面中的论文链接
-            const researchPubLink = document.querySelector('#research a[data-page="publications"]');
-            if (researchPubLink) {
-                researchPubLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // 更新活跃导航链接
-                    navLinks.forEach(navLink => navLink.classList.remove('active'));
-                    document.querySelector('.nav-link[data-page="publications"]').classList.add('active');
-                    
-                    // 显示论文部分
-                    pageSections.forEach(section => {
-                        section.classList.remove('active');
-                        if (section.id === 'publications') {
-                            section.classList.add('active');
-                        }
-                    });
-                    
-                    // 滚动到顶部
-                    window.scrollTo(0, 0);
-                });
-            }
-            
-            // 论文筛选功能
-            const categoryFilters = document.querySelectorAll('.category-filters .filter-btn');
-            const yearFilters = document.querySelectorAll('.year-filters .filter-btn');
-            const publicationItems = document.querySelectorAll('.publication-item');
-            
-            let activeCategory = 'all';
-            let activeYear = 'all';
-            
-            function filterPublications() {
-                publicationItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    const year = item.getAttribute('data-year');
-                    
-                    const categoryMatch = activeCategory === 'all' || category === activeCategory;
-                    const yearMatch = activeYear === 'all' || year === activeYear;
-                    
-                    if (categoryMatch && yearMatch) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            }
-            
-            categoryFilters.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    categoryFilters.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    activeCategory = this.getAttribute('data-filter');
-                    filterPublications();
-                });
-            });
-            
-            yearFilters.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    yearFilters.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    activeYear = this.getAttribute('data-year');
-                    filterPublications();
-                });
+                const page = link.getAttribute('data-page');
+                showPage(page);
             });
         });
-    </script>
+
+        // 浏览器前进后退
+        window.addEventListener('popstate', () => {
+            const path = window.location.pathname;
+            let page = 'home';
+            for (const [p, url] of Object.entries(routeMap)) {
+                if (url === path) page = p;
+            }
+            pageSections.forEach(sec => sec.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.getElementById(page).classList.add('active');
+            document.querySelector(`.nav-link[data-page="${page}"]`).classList.add('active');
+        });
+
+        // 初次加载根据 URL 显示对应页面
+        const initialPath = window.location.pathname;
+        let initialPage = 'home';
+        for (const [p, url] of Object.entries(routeMap)) {
+            if (url === initialPath) initialPage = p;
+        }
+        showPage(initialPage);
+
+        // 论文筛选
+        const categoryFilters = document.querySelectorAll('.category-filters .filter-btn');
+        const yearFilters = document.querySelectorAll('.year-filters .filter-btn');
+        const publicationItems = document.querySelectorAll('.publication-item');
+        let activeCategory = 'all';
+        let activeYear = 'all';
+
+        function filterPublications() {
+            publicationItems.forEach(item => {
+                const cat = item.getAttribute('data-category');
+                const year = item.getAttribute('data-year');
+                const matchCat = activeCategory === 'all' || cat === activeCategory;
+                const matchYear = activeYear === 'all' || year === activeYear;
+                item.style.display = matchCat && matchYear ? 'block' : 'none';
+            });
+        }
+        categoryFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryFilters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-filter');
+                filterPublications();
+            });
+        });
+        yearFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                yearFilters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeYear = btn.getAttribute('data-year');
+                filterPublications();
+            });
+        });
+    });
+</script>
 </body>
 </html>
 
